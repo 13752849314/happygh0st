@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="sjjg" targetName="sjjg" />
+    </generated>
+  </component>
+  <component name="CMakeSettings" AUTO_RELOAD="true">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="286a1ef0-23d2-4786-a581-014e4bb5bb4c" name="默认更改列表" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="FavoritesManager">
+    <favorites_list name="sjjg" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CMakeLists.txt" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1pgyuiqSWlK6j5jP1wNpbfRFWtl" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunManager">
+    <configuration name="sjjg" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sjjg" TARGET_NAME="sjjg" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="sjjg" RUN_TARGET_NAME="sjjg">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="286a1ef0-23d2-4786-a581-014e4bb5bb4c" name="默认更改列表" comment="" />
+      <created>1615619255002</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1615619255002</updated>
+      <workItem from="1615619262865" duration="5515000" />
+      <workItem from="1615814532545" duration="2869000" />
+      <workItem from="1617111291770" duration="3850000" />
+      <workItem from="1617155715675" duration="8823000" />
+      <workItem from="1617166994956" duration="2047000" />
+      <workItem from="1617184291512" duration="1942000" />
+      <workItem from="1617253143132" duration="4446000" />
+      <workItem from="1617339378810" duration="5554000" />
+      <workItem from="1617626706273" duration="39000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="361" y="74" key="#C/C++" timestamp="1617352385646">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="74" key="#C/C++/0.0.1536.824@0.0.1536.824" timestamp="1617352385646" />
+    <state x="223" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1617166924370">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1617166924370" />
+    <state x="549" y="170" key="FileChooserDialogImpl" timestamp="1617353371910">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="170" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1617353371910" />
+    <state width="1493" height="180" key="GridCell.Tab.0.bottom" timestamp="1617626745009">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="180" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1617626745009" />
+    <state width="1493" height="180" key="GridCell.Tab.0.center" timestamp="1617626745009">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="180" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1617626745009" />
+    <state width="1493" height="180" key="GridCell.Tab.0.left" timestamp="1617626745009">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="180" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1617626745009" />
+    <state width="1493" height="180" key="GridCell.Tab.0.right" timestamp="1617626745009">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="180" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1617626745009" />
+    <state width="1342" height="242" key="GridCell.Tab.1.bottom" timestamp="1615624793405">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1342" height="242" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1615624793405" />
+    <state width="1342" height="242" key="GridCell.Tab.1.center" timestamp="1615624793405">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1342" height="242" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1615624793405" />
+    <state width="1342" height="242" key="GridCell.Tab.1.left" timestamp="1615624793404">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1342" height="242" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1615624793404" />
+    <state width="1342" height="242" key="GridCell.Tab.1.right" timestamp="1615624793405">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1342" height="242" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1615624793405" />
+    <state x="306" y="36" key="SettingsEditor" timestamp="1617184268535">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="306" y="36" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1617184268535" />
+  </component>
+</project>

@@ -1,0 +1,14 @@
+"D:\Clion\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" D:\Clion\poj\One
+CMake Warning (dev) in CMakeLists.txt:
+  No cmake_minimum_required command is present.  A line of code such as
+
+    cmake_minimum_required(VERSION 3.15)
+
+  should be added at the top of the file.  The version specified may be lower
+  if you wish to support older CMake versions for this project.  For more
+  information run "cmake --help-policy CMP0000".
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Configuring done
+-- Generating done
+-- Build files have been written to: D:/Clion/poj/One/cmake-build-debug
