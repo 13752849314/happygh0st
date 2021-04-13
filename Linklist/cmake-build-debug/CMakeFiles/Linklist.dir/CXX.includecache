@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/Clion/datastruct/Linklist/Linklist/linklist.cpp
+cstdio
+-
+cstdlib
+-
+linklist.h
+D:/Clion/datastruct/Linklist/Linklist/linklist.h
+
+D:/Clion/datastruct/Linklist/Linklist/linklist.h
+
+D:/Clion/datastruct/Linklist/main.cpp
+cstdio
+-
+cstdlib
+-
+Linklist/linklist.h
+D:/Clion/datastruct/Linklist/Linklist/linklist.h
+
