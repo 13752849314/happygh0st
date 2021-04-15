@@ -54,5 +54,22 @@ int main() {
     s.sort_Linklist();
     s.print_Linklist();
     divide();
+
+    s.print_Linklist();
+    s.delete_a_to_b(0,9);
+    s.print_Linklist();
+    divide();
+
+    linklist ss(A,n);
+    s.print_Linklist();
+    ss.print_Linklist();
+    Linklist t=s.get_by_i(s.length);
+    t->next=ss.get_by_i(ss.length);
+    s.update_length();
+    s.print_Linklist();
+    printf("data=%d\n",find_common_Node(s,ss)->data);
+    divide();
+
+
     return 0;
 }

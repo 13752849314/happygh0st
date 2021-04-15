@@ -110,7 +110,7 @@ void linklist::invert() {
  */
 void linklist::delete_all_x(ElemType x) {
     Linklist p = L->next, per = L;
-    int i=0;
+    int i = 0;
     while (p != nullptr) {
         if (p->data == x) {
             Linklist t = p;
@@ -123,7 +123,7 @@ void linklist::delete_all_x(ElemType x) {
             per = per->next;
         }
     }
-    length=length-i;
+    length = length - i;
 }
 
 /**
@@ -142,36 +142,70 @@ void linklist::delete_only_min() {
     Linklist p = L->next, per = L;
     Linklist min = p, min_per = per;
     while (p != nullptr) {
-        if(p->data<min->data){
-            min=p;
-            min_per=per;
-        }else{
-            per=p;
-            p=p->next;
+        if (p->data < min->data) {
+            min = p;
+            min_per = per;
+        } else {
+            per = p;
+            p = p->next;
         }
     }
-    min_per->next=min->next;
+    min_per->next = min->next;
     free(min);
     length--;
 }
 
 void linklist::sort_Linklist() {
-    auto *a=new ElemType[length];
-    int i=0;
-    Linklist p=L->next;
-    while(p!= nullptr){
-        a[i]=p->data;
+    auto *a = new ElemType[length];
+    int i = 0;
+    Linklist p = L->next;
+    while (p != nullptr) {
+        a[i] = p->data;
+        p = p->next;
+        i++;
+    }
+    quick_sort(a, 0, length - 1);
+    Linklist q = L->next;
+    i = 0;
+    while (q != nullptr) {
+        q->data = a[i];
+        q = q->next;
+        i++;
+    }
+}
+
+/**
+ * 删除a，b之间的结点
+ * @param a
+ * @param b
+ */
+void linklist::delete_a_to_b(ElemType a, ElemType b) {
+    Linklist p = L->next, per = L;
+    int i = 0;
+    while (p != nullptr) {
+        if (p->data > a && p->data < b) {
+            Linklist t = p;
+            per->next = p->next;
+            p = p->next;
+            i++;
+            free(t);
+        } else {
+            p = p->next;
+            per = per->next;
+        }
+    }
+    length = length - i;
+}
+
+void linklist::update_length() {
+    int i = 0;
+    Linklist p = L->next;
+    while (p != nullptr) {
+        i++;
         p=p->next;
-        i++;
     }
-    quick_sort(a,0,length-1);
-    Linklist q=L->next;
-    i=0;
-    while(q!= nullptr){
-        q->data=a[i];
-        q=q->next;
-        i++;
-    }
+    length = i;
+    printf("new length=%d\n",length);
 }
 
 /**
@@ -196,3 +230,32 @@ void quick_sort(ElemType A[], int str, int fin) {
         quick_sort(A, i + 1, fin);
     }
 }
+
+/**
+ * 获取A，B的公共结点
+ * @param A
+ * @param B
+ * @return 公共结点
+ */
+Linklist find_common_Node(linklist &A, linklist &B) {
+    int len1 = A.length, len2 = B.length;
+    Linklist long_L, short_L;
+    if (len1 > len2) {
+        long_L = A.L;
+        short_L = B.L;
+    } else {
+        long_L = B.L;
+        short_L = A.L;
+    }
+    int i = abs(len1 - len2);
+    while (i--) {
+        long_L = long_L->next;
+    }
+    while (long_L != short_L) {
+        long_L = long_L->next;
+        short_L = short_L->next;
+    }
+    return long_L;
+}
+
+
