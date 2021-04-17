@@ -34,10 +34,10 @@ int main() {
     divide();
 
     s.print_Linklist();
-    printf("length=%d\n",s.length);
+    printf("length=%d\n", s.length);
     s.delete_all_x(5);
     s.print_Linklist();
-    printf("length=%d\n",s.length);
+    printf("length=%d\n", s.length);
     divide();
 
     s.print_Linklist();
@@ -56,20 +56,50 @@ int main() {
     divide();
 
     s.print_Linklist();
-    s.delete_a_to_b(0,9);
+    s.delete_a_to_b(0, 9);
     s.print_Linklist();
     divide();
 
-    linklist ss(A,n);
+    linklist ss(A, n);
     s.print_Linklist();
     ss.print_Linklist();
-    Linklist t=s.get_by_i(s.length);
-    t->next=ss.get_by_i(ss.length);
+    Linklist t = s.get_by_i(s.length);
+    t->next = ss.get_by_i(ss.length);
     s.update_length();
     s.print_Linklist();
-    printf("data=%d\n",find_common_Node(s,ss)->data);
+    printf("data=%d\n", find_common_Node(s, ss)->data);
     divide();
 
+    ss.print_Linklist();
+    ss.print_up();
+    ss.print_Linklist();
+    divide();
 
+    ElemType a_78[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18};
+    int n_79 = sizeof(a_78) / sizeof(a_78[0]);
+    linklist sss(a_78, n_79);
+    sss.print_Linklist();
+    Linklist B_82 = sss.divide_by_odd_even();
+    sss.update_length();
+    sss.print_Linklist();
+    print_Linklist(B_82);
+    divide();
+
+    sss.print_Linklist();
+    Linklist B_89 = sss.divide_by_odd_even2();
+    sss.update_length();
+    sss.print_Linklist();
+    print_Linklist(B_89);
+    divide();
+
+    s.print_Linklist();
+    s.insert_i(2, -2);
+    s.insert_i(2, -78);
+    s.insert_i(2, 999);
+    s.sort_Linklist();
+    s.print_Linklist();
+    s.delete_same();
+    s.print_Linklist();
+    divide();
     return 0;
 }

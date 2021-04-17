@@ -32,9 +32,13 @@ public:
     void delete_only_min();//删除最小值结点（唯一） p38 4
     void sort_Linklist();//排序（升序） p38 6
     void delete_a_to_b(ElemType a, ElemType b);//删除a，b之间的结点 p38 7
+    void print_up();//按升序打印链表，并释放空间 p38 9
+    Linklist divide_by_odd_even();//将链表保留原来处于奇数位的元素，返回B保存偶数位 p38 10
+    Linklist divide_by_odd_even2();//将链表保留原来处于奇数位的元素，返回B保存偶数位并翻转 p38 11
+    void delete_same();//删除L中重复的元素，L递增 p38 12
     virtual ~linklist();
 };
-
+void print_Linklist(Linklist L);//打印链表
 void quick_sort(ElemType A[], int str, int fin);// 快速排序
 Linklist find_common_Node(linklist &A, linklist &B);//获取A，B的公共结点 p38 8
 #endif //LINKLIST_LINKLIST_H

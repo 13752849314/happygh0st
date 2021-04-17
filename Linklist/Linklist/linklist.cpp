@@ -33,6 +33,10 @@ linklist::linklist(const ElemType *A, int n) { //尾插法创建单链表
  * 打印链表
  */
 void linklist::print_Linklist() { //打印链表
+    if (L->next == nullptr) {
+        printf("Empty!\n");
+        return;
+    }
     Linklist p = L->next;
     while (p != nullptr) {
         printf("%d ", p->data);
@@ -56,7 +60,7 @@ Linklist linklist::get_by_i(int i) {//获取第i个结点
         }
         return p;
     }
-    return nullptr;
+    return L;
 }
 
 /**
@@ -202,10 +206,96 @@ void linklist::update_length() {
     Linklist p = L->next;
     while (p != nullptr) {
         i++;
-        p=p->next;
+        p = p->next;
     }
     length = i;
-    printf("new length=%d\n",length);
+    printf("new length=%d\n", length);
+}
+
+void linklist::print_up() {
+    Linklist p = L->next;
+    while (p != nullptr) {
+        Linklist per = L, min = p, min_per = L;
+        while (p != nullptr) {
+            if (p->data < min->data) {
+                min = p;
+                min_per = per;
+            } else {
+                per = p;
+                p = p->next;
+            }
+        }
+        min_per->next = min->next;
+        printf("%d ", min->data);
+        free(min);
+        p = L->next;
+    }
+    //free(L);
+    length = 0;
+    putchar('\n');
+}
+
+Linklist linklist::divide_by_odd_even() {
+    auto B = (Linklist) malloc(sizeof(LNode));
+    B->next = nullptr;
+    Linklist p = L->next, per = L, q = B;
+    int i = 1;
+    while (p != nullptr) {
+        if (i % 2 == 0) {
+            Linklist t = p;
+            per->next = p->next;//保证L不断链
+            p = p->next;
+            //尾插法插入B
+            t->next = q->next;
+            q->next = t;
+            q = t;
+            i++;
+        } else {
+            per = per->next;
+            p = p->next;
+            i++;
+        }
+    }
+    return B;
+}
+
+Linklist linklist::divide_by_odd_even2() {
+    auto B = (Linklist) malloc(sizeof(LNode));
+    B->next = nullptr;
+    Linklist p = L->next, per = L;
+    int i = 1;
+    while (p != nullptr) {
+        if (i % 2 == 0) {
+            Linklist t = p;
+            per->next = p->next;//保证L不断链
+            p = p->next;
+            //头插法
+            t->next = B->next;
+            B->next = t;
+            i++;
+        } else {
+            p = p->next;
+            per = per->next;
+            i++;
+        }
+    }
+    return B;
+}
+
+void linklist::delete_same() {
+    if (length == 1) return;
+    Linklist p = L->next, q = p->next;
+    while (q != nullptr) {
+        if (p->data == q->data) {
+            Linklist t = q;
+            p->next = q->next;
+            q = q->next;
+            free(t);
+        } else {
+            p = p->next;
+            q = q->next;
+        }
+    }
 }
 
 /**
@@ -248,7 +338,7 @@ Linklist find_common_Node(linklist &A, linklist &B) {
         short_L = A.L;
     }
     int i = abs(len1 - len2);
-    while (i--) {
+    while (i--) { //让长的链表先走i步
         long_L = long_L->next;
     }
     while (long_L != short_L) {
@@ -256,6 +346,19 @@ Linklist find_common_Node(linklist &A, linklist &B) {
         short_L = short_L->next;
     }
     return long_L;
+}
+
+void print_Linklist(Linklist L) {
+    if (L->next == nullptr) {
+        printf("Empty!\n");
+        return;
+    }
+    Linklist p = L->next;
+    while (p != nullptr) {
+        printf("%d ", p->data);
+        p = p->next;
+    }
+    putchar('\n');
 }
 
 
