@@ -122,6 +122,33 @@ Linklist/fast:
 	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/build
 .PHONY : Linklist/fast
 
+Linklist/LLinklist.obj: Linklist/LLinklist.cpp.obj
+
+.PHONY : Linklist/LLinklist.obj
+
+# target to build an object file
+Linklist/LLinklist.cpp.obj:
+	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/Linklist/LLinklist.cpp.obj
+.PHONY : Linklist/LLinklist.cpp.obj
+
+Linklist/LLinklist.i: Linklist/LLinklist.cpp.i
+
+.PHONY : Linklist/LLinklist.i
+
+# target to preprocess a source file
+Linklist/LLinklist.cpp.i:
+	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/Linklist/LLinklist.cpp.i
+.PHONY : Linklist/LLinklist.cpp.i
+
+Linklist/LLinklist.s: Linklist/LLinklist.cpp.s
+
+.PHONY : Linklist/LLinklist.s
+
+# target to generate assembly for a file
+Linklist/LLinklist.cpp.s:
+	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/Linklist/LLinklist.cpp.s
+.PHONY : Linklist/LLinklist.cpp.s
+
 Linklist/linklist.obj: Linklist/linklist.cpp.obj
 
 .PHONY : Linklist/linklist.obj
@@ -185,6 +212,9 @@ help:
 	@echo ... rebuild_cache
 	@echo ... Linklist
 	@echo ... edit_cache
+	@echo ... Linklist/LLinklist.obj
+	@echo ... Linklist/LLinklist.i
+	@echo ... Linklist/LLinklist.s
 	@echo ... Linklist/linklist.obj
 	@echo ... Linklist/linklist.i
 	@echo ... Linklist/linklist.s

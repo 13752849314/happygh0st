@@ -9,6 +9,11 @@ linklist::linklist() = default;
 
 linklist::~linklist() = default;
 
+linklist::linklist(Linklist L) {
+    this->L = L;
+    update_length();
+}
+
 /**
  * 构造函数，利用数组创建单链表
  * @param A 数组
@@ -298,6 +303,152 @@ void linklist::delete_same() {
     }
 }
 
+void linklist::add_to_L(Linklist A) {
+    auto c = (Linklist) malloc(sizeof(LNode));
+    c->next = nullptr;
+    Linklist p = L->next, q = A->next;
+    while (p && q) {
+        if (p->data < q->data) {
+            Linklist t = p;
+            p = p->next;
+            t->next = c->next;
+            c->next = t;
+        } else {
+            Linklist t = q;
+            q = q->next;
+            t->next = c->next;
+            c->next = t;
+        }
+    }
+    while (p != nullptr) {
+        Linklist t = p;
+        p = p->next;
+        t->next = c->next;
+        c->next = t;
+    }
+    while (q != nullptr) {
+        Linklist t = q;
+        q = q->next;
+        t->next = c->next;
+        c->next = t;
+    }
+    L = c;
+}
+
+Linklist linklist::Union(linklist &a) {
+    auto c = (Linklist) malloc(sizeof(LNode));
+    c->next = nullptr;
+    Linklist p = L->next, q = a.L->next, g = c;
+    while (p != nullptr && q != nullptr) {
+        if (p->next != nullptr) {
+            while (p->data == p->next->data) {//如果相邻两个结点的值相同
+                p = p->next;
+                if (p->next == nullptr) break;//此时p已经为尾结点
+            }
+        }
+        if (q->next != nullptr) {
+            while (q->data == q->next->data) {
+                q = q->next;
+                if (q->next == nullptr) break;
+            }
+        }
+        if (p->data == q->data) {
+            auto s = (Linklist) malloc(sizeof(LNode));
+            s->data = p->data;
+            s->next = g->next;
+            g->next = s;
+            g = s;
+            p = p->next;
+            q = q->next;
+        } else {
+            p = p->next;
+        }
+    }
+    return c;
+}
+
+/**
+ * 判断a.L是否为L的连续子序列 p38 16
+ * @param a
+ * @return 0:不是  1:是
+ */
+int linklist::is_substr(linklist &a) {
+    Linklist p = L->next, per = L->next, q = a.L->next;
+    while (p != nullptr && q != nullptr) {
+        if (p->data == q->data) {
+            p = p->next;
+            q = q->next;
+        } else {
+            per = per->next;
+            p = per;
+            q = a.L->next;
+        }
+    }
+    if (q == nullptr) return 1;
+    else return 0;
+}
+
+/**
+ * 寻找链表倒数第k个结点 p39 21
+ * @param k
+ * @return 0:fail 1:success
+ */
+int linklist::Search_end_k(int k) {
+    Linklist p = L->next, q = p;
+    int count = 0;
+    while (p != nullptr) {
+        if (count < k) count++;
+        else q = q->next;
+        p = p->next;
+    }
+    if (count < k) {
+        printf("Search Fail!\n");
+        return 0;
+    } else {
+        printf("Search Success! data=%d\n", q->data);
+        return 1;
+    }
+    /*算法思想：
+     * p和q最初都指向L的第一个结点，count=0
+     * 先使p向后移动k步(count++)，然后在p，q一起向后移动，直到p为空
+     * 若count小于k，说明链表长度不足k，故找不到相应结点；否则q即为要找的结点
+     * 时间复杂度  O(n)
+     * 空间复杂度  O(1)
+     */
+}
+
+void linklist::delete_abs_same(int n) {
+    int *a = new int[n + 1];//辅助空间
+    Linklist p = L, s;
+    while (p->next != nullptr) {
+        int m = abs(p->next->data);
+        if (a[m] == 0) {//第一次出现
+            a[m]=1;//标记为已经出现
+            p = p->next;
+        } else {
+            s = p->next;//删除结点
+            p->next = s->next;
+            free(s);
+        }
+    }
+    free(a);//释放数组空间
+    /**
+     * 1.构造辅助数组a[n+1],初值为0
+     * 2.依次扫描链表，如果a[abs(data)]==0,保留该结点并令a[abs(data)]=1；否则删除该结点
+     * 时间复杂度  O(len(L))
+     * 空间复杂度  O(n)
+     */
+}
+
+/**
+ * 判断L是否有环 p39 24
+ * @return  返回入环结点
+ */
+Linklist linklist::have_loop() {
+    return nullptr;
+}
+
+
 /**
  * 快速排序
  * @param A 要排序的数组
@@ -322,7 +473,7 @@ void quick_sort(ElemType A[], int str, int fin) {
 }
 
 /**
- * 获取A，B的公共结点
+ * 获取A，B的公共结点 (p38 8) (p38 22)只需要改变链表data的数据类型
  * @param A
  * @param B
  * @return 公共结点
@@ -346,6 +497,14 @@ Linklist find_common_Node(linklist &A, linklist &B) {
         short_L = short_L->next;
     }
     return long_L;
+    /**
+     * 1.求出两个链表的长度len1和len2
+     * 2.long_L指向长的链表的头结点；short_L指向短的链表的头结点
+     * 3.让long_L向后移动abs(len1-len2)步
+     * 4.将long_L和short_L同时向后移动，直到指向同一个结点
+     * 时间复杂度  O(max(len1,len2))
+     * 空间复杂度  O(1)
+     */
 }
 
 void print_Linklist(Linklist L) {

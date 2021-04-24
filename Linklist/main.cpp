@@ -1,6 +1,7 @@
 #include <cstdio>
 #include <cstdlib>
 #include "Linklist/linklist.h"
+#include "Linklist/LLinklist.h"
 
 int temp = 0;
 
@@ -9,8 +10,9 @@ void divide() {
     temp++;
 }
 
+
 int main() {
-    ElemType A[] = {-12, 5, 1, 7, 8, 56, -2, 78, 1, 1, 3, 5, 5, -78};
+    ElemType A[] = {-12, -5, 1, 7, 8, 56, -2, 78, 1, 1, 3, 5, 5, -78};
     int n = sizeof(A) / sizeof(A[0]);
     //quick_sort(A, 0, n - 1);
     linklist s(A, n);
@@ -101,5 +103,71 @@ int main() {
     s.delete_same();
     s.print_Linklist();
     divide();
+
+    s.print_Linklist();
+    sss.print_Linklist();
+    s.add_to_L(sss.L);
+    s.update_length();
+    sss.update_length();
+    s.print_Linklist();
+    sss.print_Linklist();
+    divide();
+
+    ElemType a_118[] = {1, 1, 2, 3, 3, 4, 7, 9, 9, 9, 11};
+    int n_116 = sizeof(a_118) / sizeof(a_118[0]);
+    linklist a_117(a_118, n_116);
+    a_117.print_Linklist();
+    ElemType a_119[] = {3, 4, 7};
+    int n_120 = sizeof(a_119) / sizeof(a_119[0]);
+    linklist a_121(a_119, n_120);
+    a_121.print_Linklist();
+    Linklist c = a_117.Union(a_121);
+    print_Linklist(c);
+    divide();
+
+    a_117.print_Linklist();
+    a_121.print_Linklist();
+    int boo = a_117.is_substr(a_121);
+    printf("%d\n", boo);
+    divide();
+
+    ElemType hg[] = {1,3,5,6,6,5,3,1};
+    int z = sizeof(hg) / sizeof(hg[0]);
+    llinklist fzy(hg, z);
+    fzy.print_LLinklist();
+    divide();
+
+    auto L = (DLinklist) malloc(sizeof(DNode));
+    creat_DLinklist(L, hg, z);
+    print_DLinklist(L);
+    is_symmetry(L);
+    divide();
+
+    ElemType sg[]={2,4,7,888,999};
+    int sg_n= sizeof(sg)/ sizeof(sg[0]);
+    llinklist pg(sg,sg_n);
+    pg.print_LLinklist();
+    fzy.add_tail(pg);
+    fzy.print_LLinklist();
+    divide();
+
+    fzy.print_up();
+    divide();
+
+    test_Locate();
+    divide();
+
+    linklist a_160(A,n);
+    a_160.print_Linklist();
+    a_160.Search_end_k(10);
+    divide();
+
+    a_160.print_Linklist();
+    a_160.delete_abs_same(78);
+    a_160.print_Linklist();
+    divide();
+
+    int ao=0;
+    printf("%d\n",&ao);
     return 0;
 }

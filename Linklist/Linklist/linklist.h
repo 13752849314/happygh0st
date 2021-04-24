@@ -19,7 +19,7 @@ public:
     Linklist L = (Linklist) malloc(sizeof(LNode));
 
     linklist();
-
+    explicit linklist(Linklist L);
     linklist(const ElemType A[], int n);//尾插法创建单链表
     void print_Linklist();//打印链表
     Linklist get_by_i(int i);//获取第i个结点
@@ -36,6 +36,12 @@ public:
     Linklist divide_by_odd_even();//将链表保留原来处于奇数位的元素，返回B保存偶数位 p38 10
     Linklist divide_by_odd_even2();//将链表保留原来处于奇数位的元素，返回B保存偶数位并翻转 p38 11
     void delete_same();//删除L中重复的元素，L递增 p38 12
+    void add_to_L(Linklist A);//L和A递增，将A和L合并成递减的单链表 p38 13
+    Linklist Union(linklist &a);//a.L和L递增，返回交集 p38 14/15
+    int is_substr(linklist &a);//判断a.L是否为L的连续子序列 p38 16
+    int Search_end_k(int k);//寻找链表倒数第k个结点 p39 21
+    void delete_abs_same(int n);//删除绝对值相同的元素结点，保留第一次出现的,链表要求abs(data)<=n
+    Linklist have_loop();//判断L是否有环 p39 24
     virtual ~linklist();
 };
 void print_Linklist(Linklist L);//打印链表
