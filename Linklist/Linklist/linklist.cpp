@@ -423,7 +423,7 @@ void linklist::delete_abs_same(int n) {
     while (p->next != nullptr) {
         int m = abs(p->next->data);
         if (a[m] == 0) {//第一次出现
-            a[m]=1;//标记为已经出现
+            a[m] = 1;//标记为已经出现
             p = p->next;
         } else {
             s = p->next;//删除结点
@@ -445,7 +445,68 @@ void linklist::delete_abs_same(int n) {
  * @return  返回入环结点
  */
 Linklist linklist::have_loop() {
+    auto *k = new Linklist[N];//拿数组存结点
+    int i = 0;
+    k[i] = L;
+    Linklist p = L;
+    while (p->next != nullptr) {//没有环从这里退出循环
+        p = p->next;
+        i++;
+        for (int j = 0; j < i; j++) {
+            if (k[j] == p) {
+                return p;//有环从这里退出
+            }
+        }
+        k[i] = p;
+    }
     return nullptr;
+    /**
+     * 算法思想：初始数组只有头结点这一个元素
+     * 依次遍历链表，如果p不在数组中，则加入数组；反之返回p
+     * 时间复杂度  O(n^2)
+     * 空间复杂度  O(n)
+     */
+}
+
+void linklist::str_end() {
+    Linklist p = L, q = L;
+    while (p->next != nullptr) {//找到中间结点q O(n)
+        p = p->next;
+        q = q->next;
+        if (p->next != nullptr) p = p->next;
+    }
+    //printf("%d    %d\n", q->data, p->data);
+    auto head = (Linklist) malloc(sizeof(LNode));//后半截的头结点
+    head->next = q->next;
+    q->next = nullptr;//分割开
+    Linklist s = head->next, r = s->next, t;
+    while (r != nullptr) {//倒置后半截 O(n)
+        t = r->next;
+        r->next = head->next;
+        head->next = r;
+        r = t;
+    }
+    s->next = nullptr;//将后半截末尾指向空
+    p = L->next;
+    q = head->next;
+    while (p && q) {//合并 O(n)
+        r = p->next;
+        s = q->next;
+
+        q->next = p->next;
+        p->next = q;
+
+        p = r;
+        q = s;
+    }
+    /**
+     * 算法思想：
+     * 1.找到中间结点  时间复杂度O(n)
+     * 2.将后半截倒置  时间复杂度O(n)
+     * 3.合并成要求的样子  时间复杂度O(n)
+     * 总的时间复杂度  O(n)
+     * 空间复杂度  O(1)
+     */
 }
 
 

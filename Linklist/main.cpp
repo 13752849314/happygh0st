@@ -131,7 +131,7 @@ int main() {
     printf("%d\n", boo);
     divide();
 
-    ElemType hg[] = {1,3,5,6,6,5,3,1};
+    ElemType hg[] = {1, 3, 5, 6, 6, 5, 3, 1};
     int z = sizeof(hg) / sizeof(hg[0]);
     llinklist fzy(hg, z);
     fzy.print_LLinklist();
@@ -143,9 +143,9 @@ int main() {
     is_symmetry(L);
     divide();
 
-    ElemType sg[]={2,4,7,888,999};
-    int sg_n= sizeof(sg)/ sizeof(sg[0]);
-    llinklist pg(sg,sg_n);
+    ElemType sg[] = {2, 4, 7, 888, 999};
+    int sg_n = sizeof(sg) / sizeof(sg[0]);
+    llinklist pg(sg, sg_n);
     pg.print_LLinklist();
     fzy.add_tail(pg);
     fzy.print_LLinklist();
@@ -157,7 +157,7 @@ int main() {
     test_Locate();
     divide();
 
-    linklist a_160(A,n);
+    linklist a_160(A, n);
     a_160.print_Linklist();
     a_160.Search_end_k(10);
     divide();
@@ -167,7 +167,19 @@ int main() {
     a_160.print_Linklist();
     divide();
 
-    int ao=0;
-    printf("%d\n",&ao);
+    linklist ou(A, n);
+    ou.print_Linklist();
+    Linklist end = ou.get_by_i(ou.length);//取最后一个结点
+    Linklist ru = ou.get_by_i(6);//取第i个结点
+    end->next = ru;//最后一个结点指向第i个结点
+    Linklist re = ou.have_loop();
+    printf("%d\n", re->data);
+    divide();
+
+    linklist ao(A, n);
+    ao.print_Linklist();
+    ao.str_end();
+    ao.print_Linklist();
+    divide();
     return 0;
 }

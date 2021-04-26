@@ -4,6 +4,7 @@
 
 #ifndef LINKLIST_LINKLIST_H
 #define LINKLIST_LINKLIST_H
+#define N 100
 typedef int ElemType;
 /**
  * 单链表
@@ -42,6 +43,7 @@ public:
     int Search_end_k(int k);//寻找链表倒数第k个结点 p39 21
     void delete_abs_same(int n);//删除绝对值相同的元素结点，保留第一次出现的,链表要求abs(data)<=n
     Linklist have_loop();//判断L是否有环 p39 24
+    void str_end();//将首尾放在一起 p39 25
     virtual ~linklist();
 };
 void print_Linklist(Linklist L);//打印链表
