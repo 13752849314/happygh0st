@@ -4,9 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "D:/Clion/datastruct/Linklist/Linklist/LLinklist.cpp" "D:/Clion/datastruct/Linklist/cmake-build-debug/CMakeFiles/Linklist.dir/Linklist/LLinklist.cpp.obj"
-  "D:/Clion/datastruct/Linklist/Linklist/linklist.cpp" "D:/Clion/datastruct/Linklist/cmake-build-debug/CMakeFiles/Linklist.dir/Linklist/linklist.cpp.obj"
-  "D:/Clion/datastruct/Linklist/main.cpp" "D:/Clion/datastruct/Linklist/cmake-build-debug/CMakeFiles/Linklist.dir/main.cpp.obj"
+  "D:/Clion/datastruct/Linklist/Linklist/Stack.cpp" "D:/Clion/datastruct/Linklist/cmake-build-debug/CMakeFiles/Linklist.dir/Linklist/Stack.cpp.obj"
+  "D:/Clion/datastruct/Linklist/main1.cpp" "D:/Clion/datastruct/Linklist/cmake-build-debug/CMakeFiles/Linklist.dir/main1.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

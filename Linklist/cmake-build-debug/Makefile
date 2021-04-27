@@ -122,86 +122,59 @@ Linklist/fast:
 	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/build
 .PHONY : Linklist/fast
 
-Linklist/LLinklist.obj: Linklist/LLinklist.cpp.obj
+Linklist/Stack.obj: Linklist/Stack.cpp.obj
 
-.PHONY : Linklist/LLinklist.obj
-
-# target to build an object file
-Linklist/LLinklist.cpp.obj:
-	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/Linklist/LLinklist.cpp.obj
-.PHONY : Linklist/LLinklist.cpp.obj
-
-Linklist/LLinklist.i: Linklist/LLinklist.cpp.i
-
-.PHONY : Linklist/LLinklist.i
-
-# target to preprocess a source file
-Linklist/LLinklist.cpp.i:
-	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/Linklist/LLinklist.cpp.i
-.PHONY : Linklist/LLinklist.cpp.i
-
-Linklist/LLinklist.s: Linklist/LLinklist.cpp.s
-
-.PHONY : Linklist/LLinklist.s
-
-# target to generate assembly for a file
-Linklist/LLinklist.cpp.s:
-	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/Linklist/LLinklist.cpp.s
-.PHONY : Linklist/LLinklist.cpp.s
-
-Linklist/linklist.obj: Linklist/linklist.cpp.obj
-
-.PHONY : Linklist/linklist.obj
+.PHONY : Linklist/Stack.obj
 
 # target to build an object file
-Linklist/linklist.cpp.obj:
-	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/Linklist/linklist.cpp.obj
-.PHONY : Linklist/linklist.cpp.obj
+Linklist/Stack.cpp.obj:
+	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/Linklist/Stack.cpp.obj
+.PHONY : Linklist/Stack.cpp.obj
 
-Linklist/linklist.i: Linklist/linklist.cpp.i
+Linklist/Stack.i: Linklist/Stack.cpp.i
 
-.PHONY : Linklist/linklist.i
+.PHONY : Linklist/Stack.i
 
 # target to preprocess a source file
-Linklist/linklist.cpp.i:
-	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/Linklist/linklist.cpp.i
-.PHONY : Linklist/linklist.cpp.i
+Linklist/Stack.cpp.i:
+	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/Linklist/Stack.cpp.i
+.PHONY : Linklist/Stack.cpp.i
 
-Linklist/linklist.s: Linklist/linklist.cpp.s
+Linklist/Stack.s: Linklist/Stack.cpp.s
 
-.PHONY : Linklist/linklist.s
+.PHONY : Linklist/Stack.s
 
 # target to generate assembly for a file
-Linklist/linklist.cpp.s:
-	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/Linklist/linklist.cpp.s
-.PHONY : Linklist/linklist.cpp.s
+Linklist/Stack.cpp.s:
+	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/Linklist/Stack.cpp.s
+.PHONY : Linklist/Stack.cpp.s
 
-main.obj: main.cpp.obj
+main1.obj: main1.cpp.obj
 
-.PHONY : main.obj
+.PHONY : main1.obj
 
 # target to build an object file
-main.cpp.obj:
-	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/main.cpp.obj
-.PHONY : main.cpp.obj
+main1.cpp.obj:
+	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/main1.cpp.obj
+.PHONY : main1.cpp.obj
 
-main.i: main.cpp.i
+main1.i: main1.cpp.i
 
-.PHONY : main.i
+.PHONY : main1.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/main.cpp.i
-.PHONY : main.cpp.i
+main1.cpp.i:
+	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/main1.cpp.i
+.PHONY : main1.cpp.i
 
-main.s: main.cpp.s
+main1.s: main1.cpp.s
 
-.PHONY : main.s
+.PHONY : main1.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/main.cpp.s
-.PHONY : main.cpp.s
+main1.cpp.s:
+	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/main1.cpp.s
+.PHONY : main1.cpp.s
 
 # Help Target
 help:
@@ -212,15 +185,12 @@ help:
 	@echo ... rebuild_cache
 	@echo ... Linklist
 	@echo ... edit_cache
-	@echo ... Linklist/LLinklist.obj
-	@echo ... Linklist/LLinklist.i
-	@echo ... Linklist/LLinklist.s
-	@echo ... Linklist/linklist.obj
-	@echo ... Linklist/linklist.i
-	@echo ... Linklist/linklist.s
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
+	@echo ... Linklist/Stack.obj
+	@echo ... Linklist/Stack.i
+	@echo ... Linklist/Stack.s
+	@echo ... main1.obj
+	@echo ... main1.i
+	@echo ... main1.s
 .PHONY : help
 
 

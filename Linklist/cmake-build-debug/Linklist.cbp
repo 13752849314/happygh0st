@@ -80,19 +80,13 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="D:/Clion/datastruct/Linklist/Linklist/LLinklist.cpp">
+		<Unit filename="D:/Clion/datastruct/Linklist/Linklist/Stack.cpp">
 			<Option target="Linklist"/>
 		</Unit>
-		<Unit filename="D:/Clion/datastruct/Linklist/Linklist/LLinklist.h">
+		<Unit filename="D:/Clion/datastruct/Linklist/Linklist/Stack.h">
 			<Option target="Linklist"/>
 		</Unit>
-		<Unit filename="D:/Clion/datastruct/Linklist/Linklist/linklist.cpp">
-			<Option target="Linklist"/>
-		</Unit>
-		<Unit filename="D:/Clion/datastruct/Linklist/Linklist/linklist.h">
-			<Option target="Linklist"/>
-		</Unit>
-		<Unit filename="D:/Clion/datastruct/Linklist/main.cpp">
+		<Unit filename="D:/Clion/datastruct/Linklist/main1.cpp">
 			<Option target="Linklist"/>
 		</Unit>
 		<Unit filename="D:/Clion/datastruct/Linklist/CMakeLists.txt">

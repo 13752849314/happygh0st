@@ -6,29 +6,13 @@
 
 #IncludeRegexTransform: 
 
-D:/Clion/datastruct/Linklist/Linklist/LLinklist.h
+D:/Clion/datastruct/Linklist/Linklist/Stack.h
+
+D:/Clion/datastruct/Linklist/main1.cpp
 cstdio
 -
-cstdlib
+iostream
 -
-
-D:/Clion/datastruct/Linklist/Linklist/linklist.cpp
-cstdio
--
-cstdlib
--
-linklist.h
-D:/Clion/datastruct/Linklist/Linklist/linklist.h
-
-D:/Clion/datastruct/Linklist/Linklist/linklist.h
-
-D:/Clion/datastruct/Linklist/main.cpp
-cstdio
--
-cstdlib
--
-Linklist/linklist.h
-D:/Clion/datastruct/Linklist/Linklist/linklist.h
-Linklist/LLinklist.h
-D:/Clion/datastruct/Linklist/Linklist/LLinklist.h
+Linklist/Stack.h
+D:/Clion/datastruct/Linklist/Linklist/Stack.h
 
