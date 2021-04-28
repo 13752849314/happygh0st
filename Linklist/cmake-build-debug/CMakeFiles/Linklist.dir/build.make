@@ -56,42 +56,42 @@ include CMakeFiles/Linklist.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Linklist.dir/flags.make
 
-CMakeFiles/Linklist.dir/main1.cpp.obj: CMakeFiles/Linklist.dir/flags.make
-CMakeFiles/Linklist.dir/main1.cpp.obj: ../main1.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Clion\datastruct\Linklist\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Linklist.dir/main1.cpp.obj"
-	D:\Clion\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Linklist.dir\main1.cpp.obj -c D:\Clion\datastruct\Linklist\main1.cpp
+CMakeFiles/Linklist.dir/main2.cpp.obj: CMakeFiles/Linklist.dir/flags.make
+CMakeFiles/Linklist.dir/main2.cpp.obj: ../main2.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Clion\datastruct\Linklist\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Linklist.dir/main2.cpp.obj"
+	D:\Clion\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Linklist.dir\main2.cpp.obj -c D:\Clion\datastruct\Linklist\main2.cpp
 
-CMakeFiles/Linklist.dir/main1.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Linklist.dir/main1.cpp.i"
-	D:\Clion\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Clion\datastruct\Linklist\main1.cpp > CMakeFiles\Linklist.dir\main1.cpp.i
+CMakeFiles/Linklist.dir/main2.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Linklist.dir/main2.cpp.i"
+	D:\Clion\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Clion\datastruct\Linklist\main2.cpp > CMakeFiles\Linklist.dir\main2.cpp.i
 
-CMakeFiles/Linklist.dir/main1.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Linklist.dir/main1.cpp.s"
-	D:\Clion\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Clion\datastruct\Linklist\main1.cpp -o CMakeFiles\Linklist.dir\main1.cpp.s
+CMakeFiles/Linklist.dir/main2.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Linklist.dir/main2.cpp.s"
+	D:\Clion\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Clion\datastruct\Linklist\main2.cpp -o CMakeFiles\Linklist.dir\main2.cpp.s
 
-CMakeFiles/Linklist.dir/Linklist/Stack.cpp.obj: CMakeFiles/Linklist.dir/flags.make
-CMakeFiles/Linklist.dir/Linklist/Stack.cpp.obj: ../Linklist/Stack.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Clion\datastruct\Linklist\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Linklist.dir/Linklist/Stack.cpp.obj"
-	D:\Clion\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Linklist.dir\Linklist\Stack.cpp.obj -c D:\Clion\datastruct\Linklist\Linklist\Stack.cpp
+CMakeFiles/Linklist.dir/Queue/Queue.cpp.obj: CMakeFiles/Linklist.dir/flags.make
+CMakeFiles/Linklist.dir/Queue/Queue.cpp.obj: ../Queue/Queue.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Clion\datastruct\Linklist\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Linklist.dir/Queue/Queue.cpp.obj"
+	D:\Clion\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Linklist.dir\Queue\Queue.cpp.obj -c D:\Clion\datastruct\Linklist\Queue\Queue.cpp
 
-CMakeFiles/Linklist.dir/Linklist/Stack.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Linklist.dir/Linklist/Stack.cpp.i"
-	D:\Clion\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Clion\datastruct\Linklist\Linklist\Stack.cpp > CMakeFiles\Linklist.dir\Linklist\Stack.cpp.i
+CMakeFiles/Linklist.dir/Queue/Queue.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Linklist.dir/Queue/Queue.cpp.i"
+	D:\Clion\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Clion\datastruct\Linklist\Queue\Queue.cpp > CMakeFiles\Linklist.dir\Queue\Queue.cpp.i
 
-CMakeFiles/Linklist.dir/Linklist/Stack.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Linklist.dir/Linklist/Stack.cpp.s"
-	D:\Clion\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Clion\datastruct\Linklist\Linklist\Stack.cpp -o CMakeFiles\Linklist.dir\Linklist\Stack.cpp.s
+CMakeFiles/Linklist.dir/Queue/Queue.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Linklist.dir/Queue/Queue.cpp.s"
+	D:\Clion\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Clion\datastruct\Linklist\Queue\Queue.cpp -o CMakeFiles\Linklist.dir\Queue\Queue.cpp.s
 
 # Object files for target Linklist
 Linklist_OBJECTS = \
-"CMakeFiles/Linklist.dir/main1.cpp.obj" \
-"CMakeFiles/Linklist.dir/Linklist/Stack.cpp.obj"
+"CMakeFiles/Linklist.dir/main2.cpp.obj" \
+"CMakeFiles/Linklist.dir/Queue/Queue.cpp.obj"
 
 # External object files for target Linklist
 Linklist_EXTERNAL_OBJECTS =
 
-Linklist.exe: CMakeFiles/Linklist.dir/main1.cpp.obj
-Linklist.exe: CMakeFiles/Linklist.dir/Linklist/Stack.cpp.obj
+Linklist.exe: CMakeFiles/Linklist.dir/main2.cpp.obj
+Linklist.exe: CMakeFiles/Linklist.dir/Queue/Queue.cpp.obj
 Linklist.exe: CMakeFiles/Linklist.dir/build.make
 Linklist.exe: CMakeFiles/Linklist.dir/linklibs.rsp
 Linklist.exe: CMakeFiles/Linklist.dir/objects1.rsp

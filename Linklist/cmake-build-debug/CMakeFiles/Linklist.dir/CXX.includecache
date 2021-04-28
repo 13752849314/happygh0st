@@ -6,13 +6,17 @@
 
 #IncludeRegexTransform: 
 
-D:/Clion/datastruct/Linklist/Linklist/Stack.h
-
-D:/Clion/datastruct/Linklist/main1.cpp
-cstdio
--
+D:/Clion/datastruct/Linklist/Queue/Queue.cpp
+Queue.h
+D:/Clion/datastruct/Linklist/Queue/Queue.h
 iostream
 -
-Linklist/Stack.h
-D:/Clion/datastruct/Linklist/Linklist/Stack.h
+
+D:/Clion/datastruct/Linklist/Queue/Queue.h
+
+D:/Clion/datastruct/Linklist/main2.cpp
+iostream
+-
+Queue/Queue.h
+D:/Clion/datastruct/Linklist/Queue/Queue.h
 
