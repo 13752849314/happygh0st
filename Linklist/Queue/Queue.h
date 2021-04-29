@@ -11,9 +11,12 @@ typedef int ElemType;
  */
 typedef struct {
     ElemType data[Maxsize];
-    int front,rear;//队头指针和队尾指针
-}SqQueue;
+    int front, rear;//队头指针和队尾指针
+} SqQueue;
+
 void InitQueue(SqQueue &D);//初始化队列
+void print_Queue(SqQueue &D);//按出队顺序打印
 bool QueueEmpty(SqQueue D);//判断队列是否为空
-bool EnQueue(SqQueue &D,ElemType x);//入队
+bool EnQueue(SqQueue &D, ElemType x);//入队
+bool DeQueue(SqQueue &D, ElemType &x);//出队
 #endif //LINKLIST_QUEUE_H
