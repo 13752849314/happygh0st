@@ -149,6 +149,33 @@ Queue/Queue.cpp.s:
 	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/Queue/Queue.cpp.s
 .PHONY : Queue/Queue.cpp.s
 
+Stack/Stack.obj: Stack/Stack.cpp.obj
+
+.PHONY : Stack/Stack.obj
+
+# target to build an object file
+Stack/Stack.cpp.obj:
+	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/Stack/Stack.cpp.obj
+.PHONY : Stack/Stack.cpp.obj
+
+Stack/Stack.i: Stack/Stack.cpp.i
+
+.PHONY : Stack/Stack.i
+
+# target to preprocess a source file
+Stack/Stack.cpp.i:
+	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/Stack/Stack.cpp.i
+.PHONY : Stack/Stack.cpp.i
+
+Stack/Stack.s: Stack/Stack.cpp.s
+
+.PHONY : Stack/Stack.s
+
+# target to generate assembly for a file
+Stack/Stack.cpp.s:
+	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/Stack/Stack.cpp.s
+.PHONY : Stack/Stack.cpp.s
+
 main2.obj: main2.cpp.obj
 
 .PHONY : main2.obj
@@ -188,6 +215,9 @@ help:
 	@echo ... Queue/Queue.obj
 	@echo ... Queue/Queue.i
 	@echo ... Queue/Queue.s
+	@echo ... Stack/Stack.obj
+	@echo ... Stack/Stack.i
+	@echo ... Stack/Stack.s
 	@echo ... main2.obj
 	@echo ... main2.i
 	@echo ... main2.s

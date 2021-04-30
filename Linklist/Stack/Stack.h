@@ -34,6 +34,8 @@ void InitStack(SqStack &S);
 
 bool StackEmpty(SqStack S);
 
+bool StackOverflow(SqStack S);
+
 bool Push(SqStack &S, ElemType x);
 
 bool Pop(SqStack &S, ElemType &x);

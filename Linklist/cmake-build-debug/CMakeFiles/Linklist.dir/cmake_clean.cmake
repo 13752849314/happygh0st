@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Linklist.dir/Queue/Queue.cpp.obj"
+  "CMakeFiles/Linklist.dir/Stack/Stack.cpp.obj"
   "CMakeFiles/Linklist.dir/main2.cpp.obj"
   "Linklist.exe"
   "Linklist.exe.manifest"

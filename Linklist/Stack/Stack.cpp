@@ -268,4 +268,8 @@ bool SPop(ShareStack &S, int i, ElemType &x) {
     }
 }
 
+bool StackOverflow(SqStack S) {
+    return S.top==Maxsize-1;
+}
+
 

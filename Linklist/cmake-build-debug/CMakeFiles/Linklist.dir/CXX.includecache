@@ -6,7 +6,31 @@
 
 #IncludeRegexTransform: 
 
+D:/Clion/datastruct/Linklist/Linklist/linklist.h
+cstdlib
+-
+
+D:/Clion/datastruct/Linklist/Queue/Queue.cpp
+Queue.h
 D:/Clion/datastruct/Linklist/Queue/Queue.h
+iostream
+-
+
+D:/Clion/datastruct/Linklist/Queue/Queue.h
+../Stack/Stack.h
+D:/Clion/datastruct/Linklist/Stack/Stack.h
+
+D:/Clion/datastruct/Linklist/Stack/Stack.cpp
+cstdio
+-
+cstdlib
+-
+Stack.h
+D:/Clion/datastruct/Linklist/Stack/Stack.h
+
+D:/Clion/datastruct/Linklist/Stack/Stack.h
+../Linklist/linklist.h
+D:/Clion/datastruct/Linklist/Linklist/linklist.h
 
 D:/Clion/datastruct/Linklist/main2.cpp
 iostream

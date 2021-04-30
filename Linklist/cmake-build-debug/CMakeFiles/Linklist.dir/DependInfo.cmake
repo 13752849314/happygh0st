@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "D:/Clion/datastruct/Linklist/Queue/Queue.cpp" "D:/Clion/datastruct/Linklist/cmake-build-debug/CMakeFiles/Linklist.dir/Queue/Queue.cpp.obj"
+  "D:/Clion/datastruct/Linklist/Stack/Stack.cpp" "D:/Clion/datastruct/Linklist/cmake-build-debug/CMakeFiles/Linklist.dir/Stack/Stack.cpp.obj"
   "D:/Clion/datastruct/Linklist/main2.cpp" "D:/Clion/datastruct/Linklist/cmake-build-debug/CMakeFiles/Linklist.dir/main2.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

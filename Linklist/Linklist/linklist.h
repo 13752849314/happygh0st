@@ -5,6 +5,8 @@
 #ifndef LINKLIST_LINKLIST_H
 #define LINKLIST_LINKLIST_H
 #define N 100
+
+#include <cstdlib>
 typedef int ElemType;
 /**
  * µ¥Á´±í

@@ -86,6 +86,12 @@
 		<Unit filename="D:/Clion/datastruct/Linklist/Queue/Queue.h">
 			<Option target="Linklist"/>
 		</Unit>
+		<Unit filename="D:/Clion/datastruct/Linklist/Stack/Stack.cpp">
+			<Option target="Linklist"/>
+		</Unit>
+		<Unit filename="D:/Clion/datastruct/Linklist/Stack/Stack.h">
+			<Option target="Linklist"/>
+		</Unit>
 		<Unit filename="D:/Clion/datastruct/Linklist/main2.cpp">
 			<Option target="Linklist"/>
 		</Unit>
