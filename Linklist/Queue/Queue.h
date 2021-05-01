@@ -63,6 +63,12 @@ bool DeQueue_Stack(SqStack &S1, SqStack &S2, ElemType &x);//出队
 bool Stack_Queue_Empty(SqStack S1, SqStack S2);//判断是否为空
 void test_Stack_Queue();//测试
 
-//p80 4
-
+//p80 4   尾指针指向最后一个入队元素，头指针元素为空
+void InitLoopLinkQueue(LinkQueue &Q);//初始化
+bool LoopLinkQueue_Empty(LinkQueue Q);//判断是否为空
+bool LoopLinkQueue_Full(LinkQueue Q);//判断是否满
+bool En_LoopLinkQueue(LinkQueue &Q, ElemType e);//入队
+bool De_LoopLinkQueue(LinkQueue &Q,ElemType &e);//出队
+void print_LoopLinkQueue(LinkQueue &Q);//打印
+void test_LoopLinkQueue();//测试
 #endif //LINKLIST_QUEUE_H

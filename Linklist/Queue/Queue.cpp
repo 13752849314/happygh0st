@@ -224,3 +224,68 @@ void test_Stack_Queue() {
     }
     cout << endl;
 }
+
+void InitLoopLinkQueue(LinkQueue &Q) {
+    Q.front = Q.rear = (LinkNode *) malloc(sizeof(LinkNode));
+    Q.front->next = Q.rear;//构成环
+}
+
+bool LoopLinkQueue_Empty(LinkQueue Q) {
+    return Q.front == Q.rear;
+}
+
+bool LoopLinkQueue_Full(LinkQueue Q) {
+    return Q.front == Q.rear->next;
+}
+
+bool En_LoopLinkQueue(LinkQueue &Q, ElemType e) {
+    if (LoopLinkQueue_Full(Q)) {//队满，则在rear后面插入一个新结点s
+        auto s = (LinkNode *) malloc(sizeof(LinkNode));
+        s->data = e;
+        s->next = Q.rear->next;
+        Q.rear->next = s;
+        Q.rear=s;
+        return true;
+    } else {
+        Q.rear->next->data = e;//将入队元素保存在rear中
+        Q.rear = Q.rear->next;
+    }
+    return true;
+}
+
+bool De_LoopLinkQueue(LinkQueue &Q, ElemType &e) {
+    if (LoopLinkQueue_Empty(Q)) {//队空
+        return false;
+    }
+    e = Q.front->next->data;
+    Q.front = Q.front->next;
+    return true;
+}
+
+void test_LoopLinkQueue() {
+    LinkQueue a;
+    InitLoopLinkQueue(a);
+    ElemType A[] = {1, 2, 4, 7, 9};
+    int n = sizeof(A) / sizeof(A[0]);
+    for (int i = 0; i < n; i++) {
+        En_LoopLinkQueue(a, A[i]);
+    }
+    LinkNode *p=a.front->next;
+    print_LoopLinkQueue(a);
+    ElemType e;
+    De_LoopLinkQueue(a,e);
+    cout<<e<<endl;
+    print_LoopLinkQueue(a);
+    En_LoopLinkQueue(a,399);
+    En_LoopLinkQueue(a,3999);
+    print_LoopLinkQueue(a);
+}
+
+void print_LoopLinkQueue(LinkQueue &Q) {
+    LinkNode *p=Q.front->next;
+    while(p!=Q.rear->next){
+        cout<<p->data<<" ";
+        p=p->next;
+    }
+    cout<<endl;
+}

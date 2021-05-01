@@ -64,5 +64,8 @@ int main() {
 
     test_Stack_Queue();
     divide();
+
+    test_LoopLinkQueue();
+    divide();
     return 0;
 }
