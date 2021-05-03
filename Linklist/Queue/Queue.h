@@ -5,6 +5,10 @@
 #ifndef LINKLIST_QUEUE_H
 #define LINKLIST_QUEUE_H
 
+#include <string>
+#include <cstring>
+#include <vector>
+#include <regex>
 #include "../Stack/Stack.h"
 
 #define Maxsize 100 //定义队列中最大元素个数
@@ -68,7 +72,35 @@ void InitLoopLinkQueue(LinkQueue &Q);//初始化
 bool LoopLinkQueue_Empty(LinkQueue Q);//判断是否为空
 bool LoopLinkQueue_Full(LinkQueue Q);//判断是否满
 bool En_LoopLinkQueue(LinkQueue &Q, ElemType e);//入队
-bool De_LoopLinkQueue(LinkQueue &Q,ElemType &e);//出队
+bool De_LoopLinkQueue(LinkQueue &Q, ElemType &e);//出队
 void print_LoopLinkQueue(LinkQueue &Q);//打印
 void test_LoopLinkQueue();//测试
+
+//begin 表达式的计算
+template<typename T>
+struct my_stack {//泛型栈
+    T data[Maxsize]{};
+    int top = -1;
+};
+
+template<typename T>
+bool Push(my_stack<T> &S, T x);
+
+template<typename T>
+bool Pop(my_stack<T> &S, T &x);
+
+template<typename T>
+bool StackEmpty(my_stack<T> S);
+
+template<typename T>
+bool GetTop(my_stack<T> &S, T &x);
+
+bool check(std::string &exp);//检查表达式括号是否正确
+int priority(char op);//运算符的优先级
+void test();//测试
+
+std::vector<std::string> format_input(std::string exp);//格式化输入
+std::vector<std::string> to_post_exp(std::vector<std::string> &mid_exp);//转化为后缀表达式
+double solve(std::vector<std::string> &post_exp);//后缀表达式求值
+//end 表达式的计算
 #endif //LINKLIST_QUEUE_H

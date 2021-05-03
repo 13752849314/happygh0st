@@ -67,5 +67,7 @@ int main() {
 
     test_LoopLinkQueue();
     divide();
+
+    test();
     return 0;
 }
