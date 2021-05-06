@@ -95,7 +95,7 @@ bool StackEmpty(my_stack<T> S);
 template<typename T>
 bool GetTop(my_stack<T> &S, T &x);
 
-bool check(std::string &exp);//检查表达式括号是否正确
+bool check(std::string &exp);//检查表达式括号是否正确 p90 1
 int priority(char op);//运算符的优先级
 void test();//测试
 
@@ -103,4 +103,7 @@ std::vector<std::string> format_input(std::string exp);//格式化输入
 std::vector<std::string> to_post_exp(std::vector<std::string> &mid_exp);//转化为后缀表达式
 double solve(std::vector<std::string> &post_exp);//后缀表达式求值
 //end 表达式的计算
+
+char *Train_Arrange(char *train);//p90 2
+double P(int n,double x);//p90 3
 #endif //LINKLIST_QUEUE_H

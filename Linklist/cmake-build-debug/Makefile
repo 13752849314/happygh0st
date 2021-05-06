@@ -122,86 +122,32 @@ Linklist/fast:
 	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/build
 .PHONY : Linklist/fast
 
-Queue/Queue.obj: Queue/Queue.cpp.obj
+main3.obj: main3.cpp.obj
 
-.PHONY : Queue/Queue.obj
-
-# target to build an object file
-Queue/Queue.cpp.obj:
-	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/Queue/Queue.cpp.obj
-.PHONY : Queue/Queue.cpp.obj
-
-Queue/Queue.i: Queue/Queue.cpp.i
-
-.PHONY : Queue/Queue.i
-
-# target to preprocess a source file
-Queue/Queue.cpp.i:
-	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/Queue/Queue.cpp.i
-.PHONY : Queue/Queue.cpp.i
-
-Queue/Queue.s: Queue/Queue.cpp.s
-
-.PHONY : Queue/Queue.s
-
-# target to generate assembly for a file
-Queue/Queue.cpp.s:
-	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/Queue/Queue.cpp.s
-.PHONY : Queue/Queue.cpp.s
-
-Stack/Stack.obj: Stack/Stack.cpp.obj
-
-.PHONY : Stack/Stack.obj
+.PHONY : main3.obj
 
 # target to build an object file
-Stack/Stack.cpp.obj:
-	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/Stack/Stack.cpp.obj
-.PHONY : Stack/Stack.cpp.obj
+main3.cpp.obj:
+	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/main3.cpp.obj
+.PHONY : main3.cpp.obj
 
-Stack/Stack.i: Stack/Stack.cpp.i
+main3.i: main3.cpp.i
 
-.PHONY : Stack/Stack.i
-
-# target to preprocess a source file
-Stack/Stack.cpp.i:
-	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/Stack/Stack.cpp.i
-.PHONY : Stack/Stack.cpp.i
-
-Stack/Stack.s: Stack/Stack.cpp.s
-
-.PHONY : Stack/Stack.s
-
-# target to generate assembly for a file
-Stack/Stack.cpp.s:
-	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/Stack/Stack.cpp.s
-.PHONY : Stack/Stack.cpp.s
-
-main2.obj: main2.cpp.obj
-
-.PHONY : main2.obj
-
-# target to build an object file
-main2.cpp.obj:
-	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/main2.cpp.obj
-.PHONY : main2.cpp.obj
-
-main2.i: main2.cpp.i
-
-.PHONY : main2.i
+.PHONY : main3.i
 
 # target to preprocess a source file
-main2.cpp.i:
-	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/main2.cpp.i
-.PHONY : main2.cpp.i
+main3.cpp.i:
+	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/main3.cpp.i
+.PHONY : main3.cpp.i
 
-main2.s: main2.cpp.s
+main3.s: main3.cpp.s
 
-.PHONY : main2.s
+.PHONY : main3.s
 
 # target to generate assembly for a file
-main2.cpp.s:
-	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/main2.cpp.s
-.PHONY : main2.cpp.s
+main3.cpp.s:
+	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/main3.cpp.s
+.PHONY : main3.cpp.s
 
 # Help Target
 help:
@@ -212,15 +158,9 @@ help:
 	@echo ... rebuild_cache
 	@echo ... Linklist
 	@echo ... edit_cache
-	@echo ... Queue/Queue.obj
-	@echo ... Queue/Queue.i
-	@echo ... Queue/Queue.s
-	@echo ... Stack/Stack.obj
-	@echo ... Stack/Stack.i
-	@echo ... Stack/Stack.s
-	@echo ... main2.obj
-	@echo ... main2.i
-	@echo ... main2.s
+	@echo ... main3.obj
+	@echo ... main3.i
+	@echo ... main3.s
 .PHONY : help
 
 

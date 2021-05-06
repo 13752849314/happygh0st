@@ -68,6 +68,16 @@ int main() {
     test_LoopLinkQueue();
     divide();
 
-    test();
+    //test();
+    divide();
+
+    char *p="HHHSSSHSHSHSHS";
+    cout<<p<<endl;
+    char *re=Train_Arrange(p);
+    cout<<re<<endl;
+    divide();
+
+    cout<<P(3,52)<<endl;
+    divide();
     return 0;
 }

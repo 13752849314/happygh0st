@@ -300,7 +300,7 @@ void test() {
     }
     vector<string> mid_exp = format_input(exp);
     vector<string> post_exp = to_post_exp(mid_exp);
-    cout<<"The Postfix expression is:";
+    cout << "The Postfix expression is:";
     for (auto &i:post_exp) {
         cout << i << " ";
     }
@@ -453,7 +453,7 @@ std::vector<std::string> to_post_exp(std::vector<std::string> &mid_exp) {
             post_exp.push_back(each);
         } else {
             char top, op = each[0];
-            if (op == '(' || op == ')') {
+            if (op == '(' || op == ')') {//是括号
                 if (op == '(') Push(stack, op);
                 else {
                     Pop(stack, top);
@@ -464,7 +464,7 @@ std::vector<std::string> to_post_exp(std::vector<std::string> &mid_exp) {
                         Pop(stack, top);
                     }
                 }
-            } else {
+            } else {//是运算符
                 GetTop(stack, top);
                 if (priority(op) > priority(top)) {
                     Push(stack, op);
@@ -475,9 +475,8 @@ std::vector<std::string> to_post_exp(std::vector<std::string> &mid_exp) {
                         string2.push_back(top);
                         post_exp.push_back(string2);
                         GetTop(stack, top);
-                        //Push(stack, op);
                     }
-                    Push(stack,op);
+                    Push(stack, op);
                 }
             }
         }
@@ -535,4 +534,45 @@ double solve(std::vector<std::string> &post_exp) {
     string gad;
     GetTop(num, gad);
     return atof(gad.c_str());
+}
+
+char *Train_Arrange(char *train) {
+    int n = strlen(train);//获取长度
+    char *p = new char[n];
+    char c;
+    my_stack<char> stack = my_stack<char>();
+    int i = 0;
+    for (int j = 0; j < n; j++) {
+        if (train[j] == 'H') {
+            Push(stack, train[j]);
+        } else {
+            p[i++] = train[j];
+        }
+    }
+    while (!StackEmpty(stack)) {
+        Pop(stack, c);
+        p[i++] = c;
+    }
+    return p;
+}
+
+double P(int n, double x) {
+    my_stack<double> stack = my_stack<double>();
+    double n0 = 1, n1 = 2 * x;
+    if (n == 0) return n0;
+    if (n == 1) return n1;
+    Push(stack, n0);
+    Push(stack, n1);
+    int temp = 2;
+    while (temp <= n) {
+        double n_1, n_2;
+        Pop(stack, n_1);
+        Pop(stack, n_2);
+        Push(stack, n_1);
+        double pn = 2 * x * n_1 - 2 * (temp - 1) * n_2;//进行运算
+        Push(stack, pn);
+        temp++;
+    }
+    GetTop(stack, n0);
+    return n0;
 }
