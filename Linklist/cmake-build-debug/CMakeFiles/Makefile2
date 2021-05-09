@@ -73,12 +73,12 @@ preinstall:
 CMakeFiles/Linklist.dir/all:
 	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/depend
 	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\Clion\datastruct\Linklist\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target Linklist"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\Clion\datastruct\Linklist\cmake-build-debug\CMakeFiles --progress-num=1,2,3 "Built target Linklist"
 .PHONY : CMakeFiles/Linklist.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Linklist.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Clion\datastruct\Linklist\cmake-build-debug\CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Clion\datastruct\Linklist\cmake-build-debug\CMakeFiles 3
 	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/Linklist.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Clion\datastruct\Linklist\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles/Linklist.dir/rule

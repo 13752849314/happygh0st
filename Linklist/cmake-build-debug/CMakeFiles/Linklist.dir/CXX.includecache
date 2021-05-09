@@ -6,15 +6,19 @@
 
 #IncludeRegexTransform: 
 
-D:/Clion/datastruct/Linklist/String/Str.h
-vector
+D:/Clion/datastruct/Linklist/Tree/Tree.cpp
+Tree.h
+D:/Clion/datastruct/Linklist/Tree/Tree.h
+
+D:/Clion/datastruct/Linklist/Tree/Tree.h
+cstdlib
 -
 iostream
 -
 
-D:/Clion/datastruct/Linklist/main3.cpp
+D:/Clion/datastruct/Linklist/main4.cpp
 iostream
 -
-String/Str.h
-D:/Clion/datastruct/Linklist/String/Str.h
+Tree/Tree.h
+D:/Clion/datastruct/Linklist/Tree/Tree.h
 

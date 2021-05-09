@@ -122,32 +122,59 @@ Linklist/fast:
 	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/build
 .PHONY : Linklist/fast
 
-main3.obj: main3.cpp.obj
+Tree/Tree.obj: Tree/Tree.cpp.obj
 
-.PHONY : main3.obj
+.PHONY : Tree/Tree.obj
 
 # target to build an object file
-main3.cpp.obj:
-	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/main3.cpp.obj
-.PHONY : main3.cpp.obj
+Tree/Tree.cpp.obj:
+	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/Tree/Tree.cpp.obj
+.PHONY : Tree/Tree.cpp.obj
 
-main3.i: main3.cpp.i
+Tree/Tree.i: Tree/Tree.cpp.i
 
-.PHONY : main3.i
+.PHONY : Tree/Tree.i
 
 # target to preprocess a source file
-main3.cpp.i:
-	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/main3.cpp.i
-.PHONY : main3.cpp.i
+Tree/Tree.cpp.i:
+	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/Tree/Tree.cpp.i
+.PHONY : Tree/Tree.cpp.i
 
-main3.s: main3.cpp.s
+Tree/Tree.s: Tree/Tree.cpp.s
 
-.PHONY : main3.s
+.PHONY : Tree/Tree.s
 
 # target to generate assembly for a file
-main3.cpp.s:
-	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/main3.cpp.s
-.PHONY : main3.cpp.s
+Tree/Tree.cpp.s:
+	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/Tree/Tree.cpp.s
+.PHONY : Tree/Tree.cpp.s
+
+main4.obj: main4.cpp.obj
+
+.PHONY : main4.obj
+
+# target to build an object file
+main4.cpp.obj:
+	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/main4.cpp.obj
+.PHONY : main4.cpp.obj
+
+main4.i: main4.cpp.i
+
+.PHONY : main4.i
+
+# target to preprocess a source file
+main4.cpp.i:
+	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/main4.cpp.i
+.PHONY : main4.cpp.i
+
+main4.s: main4.cpp.s
+
+.PHONY : main4.s
+
+# target to generate assembly for a file
+main4.cpp.s:
+	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/main4.cpp.s
+.PHONY : main4.cpp.s
 
 # Help Target
 help:
@@ -158,9 +185,12 @@ help:
 	@echo ... rebuild_cache
 	@echo ... Linklist
 	@echo ... edit_cache
-	@echo ... main3.obj
-	@echo ... main3.i
-	@echo ... main3.s
+	@echo ... Tree/Tree.obj
+	@echo ... Tree/Tree.i
+	@echo ... Tree/Tree.s
+	@echo ... main4.obj
+	@echo ... main4.i
+	@echo ... main4.s
 .PHONY : help
 
 
