@@ -33,6 +33,12 @@ void InOrder2(BiTNode *t, void visit(DataType item));//中序遍历(非递归)
 void PostOrder2(BiTNode *t, void visit(DataType item));//后序遍历(非递归) p141 3
 
 void LevelOrder(BiTNode *t, void visit(DataType item));//层次遍历
+void InvertLevel(BiTNode *t,void visit(DataType item));//p141 4
+
+int Bi_depth(BiTNode *t);//二叉树的高度(递归)
+int Bi_depth2(BiTNode *t);//二叉树的高度(非递归) p141 5
+BiTNode *PerInCreat(DataType A[],DataType B[],int strA,int finA,int strB,int finB);
+bool IsComplete(BiTNode *t);//判断二叉树是否为完全二叉树 p141 7
 
 //下面是要用到的栈和队列的定义
 template<typename T>

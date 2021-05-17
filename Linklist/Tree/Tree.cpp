@@ -142,15 +142,138 @@ void LevelOrder(BiTNode *t, void (*visit)(DataType)) {
     BiTNode *p = t;
     EnQueue(queue, t);//根节点入队
     while (!QueueEmpty(queue)) {
-        DeQueue(queue,p);
+        DeQueue(queue, p);
         visit(p->data);
-        if(p->lchild!= nullptr){
-            EnQueue(queue,p->lchild);//左子树不空，则左子树根节点入队
+        if (p->lchild != nullptr) {
+            EnQueue(queue, p->lchild);//左子树不空，则左子树根节点入队
         }
-        if(p->rchild!= nullptr){
-            EnQueue(queue,p->rchild);//右子树不空，则右子树根节点入队
+        if (p->rchild != nullptr) {
+            EnQueue(queue, p->rchild);//右子树不空，则右子树根节点入队
         }
     }
+}
+
+/**
+ * 自下而上，自右而左的层次遍历。
+ * 算法思想：
+ * 这样的遍历与正常的层次遍历顺序恰好相反。
+ * 在原算法出队的同时将各结点入栈，在所有结点入栈后再从栈顶开始依次访问记为要求的结果
+ * @param t 二叉树的第一个结点
+ * @param visit 访问函数
+ */
+void InvertLevel(BiTNode *t, void (*visit)(DataType)) {
+    if (t != nullptr) {
+        my_stack<BiTNode *> stack = my_stack<BiTNode *>();
+        Queue<BiTNode *> queue = Queue<BiTNode *>();
+        EnQueue(queue, t);//头结点入队
+        BiTNode *p = t;
+        while (!QueueEmpty(queue)) {
+            DeQueue(queue, p);//出队的同时入栈
+            Push(stack, p);
+            if (p->lchild) {//如果左子女不空，入队
+                EnQueue(queue, p->lchild);
+            }
+            if (p->rchild) {//如果右子女不空，入队
+                EnQueue(queue, p->rchild);
+            }
+        }
+        while (!StackEmpty(stack)) {
+            Pop(stack, p);
+            visit(p->data);
+        }
+    }
+}
+
+int Bi_depth(BiTNode *t) {
+    if (t == nullptr) return 0;
+    int l_dep = Bi_depth(t->lchild);
+    int r_dep = Bi_depth(t->rchild);
+    if (l_dep > r_dep) {
+        return l_dep + 1;
+    } else {
+        return r_dep + 1;
+    }
+}
+
+int Bi_depth2(BiTNode *t) {
+    if (t == nullptr) return 0;
+    Queue<BiTNode *> queue = Queue<BiTNode *>();
+    EnQueue(queue, t);//第一个结点入队
+    BiTNode *p = t;
+    int high = 0, last = 1;//last指向当前层的最右结点
+    while (!QueueEmpty(queue)) {
+        DeQueue(queue, p);
+        if (p->lchild) {
+            EnQueue(queue, p->lchild);
+        }
+        if (p->rchild) {
+            EnQueue(queue, p->rchild);
+        }
+        if (queue.front == last) {//处理该层最右结点
+            high++;
+            last = queue.rear;//指向下一层
+        }
+    }
+    return high;
+}
+
+/**
+ * 由先序遍历A和中序遍历B建立二叉树 p141 6
+ * @param A 存放先序遍历的数组
+ * @param B 存放中序遍历的数组
+ * @param strA A的开始下标
+ * @param finA A的结束下标
+ * @param strB B的开始下标
+ * @param finB B的结束下标
+ * @return 二叉树的根节点
+ */
+BiTNode *PerInCreat(DataType A[], DataType B[], int strA, int finA, int strB, int finB) {
+    auto *root = (BiTNode *) malloc(sizeof(BiTNode));//建立根节点
+    root->data = A[strA];
+    int i;
+    for (i = strB; B[i] != root->data; i++);//根节点在中序遍历中的划分
+    int llen = i - strB;//左子树长度
+    int rlen = finB - i;//右子树长度
+    if (llen) {//递归建立左子树
+        root->lchild = PerInCreat(A, B, strA + 1, strA + llen, strB, strB + llen - 1);
+    } else {
+        root->lchild = nullptr;
+    }
+    if (rlen) {//递归建立右子树
+        root->rchild = PerInCreat(A, B, finA - rlen + 1, finA, finB - rlen + 1, finB);
+    } else {
+        root->rchild = nullptr;
+    }
+    return root;//返回根结点
+}
+
+/**
+ * 算法思想：
+ * 采用层次遍历，将所有结点加入队列（包括空结点），遇到空结点时，查看其后是否有非空结点。
+ * 若有，则二叉树不是完全二叉树
+ * @param t 二叉树的根结点
+ * @return true：是；false：不是
+ */
+bool IsComplete(BiTNode *t) {
+    if (t == nullptr) return true;//空树为满二叉树
+    Queue<BiTNode *> queue = Queue<BiTNode *>();
+    EnQueue(queue, t);//根节点入队
+    BiTNode *p = t;
+    while (!QueueEmpty(queue)) {
+        DeQueue(queue, p);
+        if (p) {
+            EnQueue(queue, p->lchild);
+            EnQueue(queue, p->rchild);
+        } else {
+            while(!QueueEmpty(queue)){
+                DeQueue(queue,p);
+                if(p){
+                    return false;
+                }
+            }
+        }
+    }
+    return true;
 }
 
 //栈和队列的方法的具体实现
@@ -205,5 +328,7 @@ bool DeQueue(Queue<T> &Q, T &x) {
         return true;
     }
 }
+
+
 
 
