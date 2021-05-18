@@ -52,7 +52,16 @@ int main() {
     cout << endl;
     InOrder(t, Visit);
     cout << endl;
-    cout <<IsComplete(t) << endl;
-
+    cout << "IsComplete?:" << IsComplete(t) << endl;
+    cout << "Double branch node's number is:" << DsonNodes(t) << endl;
+    cout << "Double branch node's number is:" << DsonNodes2(root->lchild) << endl;
+    swap(t);
+    cout<<"t PerOrder:"<<endl;
+    PerOrder(t,Visit);
+    cout<<endl;
+    cout<<"t InOrder:"<<endl;
+    InOrder(t,Visit);
+    cout<<endl;
+    cout<<"The Node at 5 in PerOrder is:"<<PerNode(t,5)<<endl;
     return 0;
 }

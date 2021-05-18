@@ -33,13 +33,18 @@ void InOrder2(BiTNode *t, void visit(DataType item));//中序遍历(非递归)
 void PostOrder2(BiTNode *t, void visit(DataType item));//后序遍历(非递归) p141 3
 
 void LevelOrder(BiTNode *t, void visit(DataType item));//层次遍历
-void InvertLevel(BiTNode *t,void visit(DataType item));//p141 4
+void InvertLevel(BiTNode *t, void visit(DataType item));//p141 4
 
 int Bi_depth(BiTNode *t);//二叉树的高度(递归)
 int Bi_depth2(BiTNode *t);//二叉树的高度(非递归) p141 5
-BiTNode *PerInCreat(DataType A[],DataType B[],int strA,int finA,int strB,int finB);
-bool IsComplete(BiTNode *t);//判断二叉树是否为完全二叉树 p141 7
+BiTNode *PerInCreat(DataType A[], DataType B[], int strA, int finA, int strB, int finB);
 
+bool IsComplete(BiTNode *t);//判断二叉树是否为完全二叉树 p141 7
+int DsonNodes(BiTNode *t);//计算二叉树中双分支结点的个数(递归) p142 8
+int DsonNodes2(BiTNode *t);//计算二叉树中双分支结点的个数(非递归) p142 8
+
+void swap(BiTNode *t);//交换二叉树的左右结点 p142 9
+DataType PerNode(BiTNode *t, int k);//先序遍历中第k个结点的值 p142 10
 //下面是要用到的栈和队列的定义
 template<typename T>
 struct my_stack {//泛型栈

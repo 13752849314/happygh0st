@@ -265,15 +265,76 @@ bool IsComplete(BiTNode *t) {
             EnQueue(queue, p->lchild);
             EnQueue(queue, p->rchild);
         } else {
-            while(!QueueEmpty(queue)){
-                DeQueue(queue,p);
-                if(p){
+            while (!QueueEmpty(queue)) {
+                DeQueue(queue, p);
+                if (p) {
                     return false;
                 }
             }
         }
     }
     return true;
+}
+
+int DsonNodes(BiTNode *t) {
+    if (t == nullptr) return 0;
+    else if (t->lchild != nullptr && t->rchild != nullptr) {
+        return DsonNodes(t->lchild) + DsonNodes(t->rchild) + 1;
+    } else {
+        return DsonNodes(t->lchild) + DsonNodes(t->rchild);
+    }
+}
+
+int DsonNodes2(BiTNode *t) {
+    if (t == nullptr) return 0;
+    BiTNode *p = t;
+    Queue<BiTNode *> queue = Queue<BiTNode *>();
+    EnQueue(queue, t);//根结点入队
+    int sum = 0;//记录双分支结点的个数
+    while (!QueueEmpty(queue)) {
+        DeQueue(queue, p);
+        if (p->lchild && p->rchild) sum++;//双分支结点加一
+        if (p->lchild) {
+            EnQueue(queue, p->lchild);
+        }
+        if (p->rchild) {
+            EnQueue(queue, p->rchild);
+        }
+    }
+    return sum;
+}
+
+void swap(BiTNode *t) {
+    if (t) {
+        swap(t->lchild);
+        swap(t->rchild);
+        BiTNode *p;
+        p = t->lchild;
+        t->lchild = t->rchild;
+        t->rchild = p;
+    }
+}
+
+DataType PerNode(BiTNode *t, int k) {
+    my_stack<BiTNode *> stack = my_stack<BiTNode *>();//初始栈
+    BiTNode *p = t;//遍历指针
+    int i = 0;
+    while (p || !StackEmpty(stack)) {
+        if (p) {//一路向左
+            i++;
+            if (i == k) {
+                //cout<<p->data<<endl;
+                return p->data;
+            }
+            //visit(p->data);//访问当前结点
+            Push(stack, p);//入栈
+            p = p->lchild;
+        } else {
+            Pop(stack, p);//出栈
+            p = p->rchild;//转向出栈结点的右子树
+        }
+    }
+    return '#';
 }
 
 //栈和队列的方法的具体实现
