@@ -45,6 +45,15 @@ int DsonNodes2(BiTNode *t);//计算二叉树中双分支结点的个数(非递归) p142 8
 
 void swap(BiTNode *t);//交换二叉树的左右结点 p142 9
 DataType PerNode(BiTNode *t, int k);//先序遍历中第k个结点的值 p142 10
+
+//p142 11
+void DeleteXTree(BiTNode *t);
+
+void Search(BiTNode *t, DataType x);
+
+//p142 12
+void find_ancestor(BiTNode *t,DataType x,void visit(DataType item));//找到x(唯一)的全部祖先
+
 //下面是要用到的栈和队列的定义
 template<typename T>
 struct my_stack {//泛型栈

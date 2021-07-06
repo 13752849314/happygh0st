@@ -304,6 +304,10 @@ int DsonNodes2(BiTNode *t) {
     return sum;
 }
 
+/**
+ * 交换二叉树的左右结点
+ * @param t 二叉树根节点
+ */
 void swap(BiTNode *t) {
     if (t) {
         swap(t->lchild);
@@ -335,6 +339,82 @@ DataType PerNode(BiTNode *t, int k) {
         }
     }
     return '#';
+}
+
+void DeleteXTree(BiTNode *t) {
+    if (t) {
+        DeleteXTree(t->lchild);
+        DeleteXTree(t->rchild);
+        free(t);
+    }
+}
+
+/**
+ * 删除值x为根的子树
+ * @param t
+ * @param x
+ */
+void Search(BiTNode *t, DataType x) {
+    Queue<BiTNode *> queue = Queue<BiTNode *>();
+    if (t) {
+        if (t->data == x) {
+            DeleteXTree(t);
+            exit(0);
+        }
+        BiTNode *p = t;
+        EnQueue(queue, t);
+        while (!QueueEmpty(queue)) {
+            DeQueue(queue, p);
+            if (p->lchild) {
+                if (p->lchild->data == x) {
+                    DeleteXTree(p->lchild);
+                    p->lchild = nullptr;
+                } else {
+                    EnQueue(queue, p->lchild);
+                }
+            }
+            if (p->rchild) {
+                if (p->rchild->data == x) {
+                    DeleteXTree(p->rchild);
+                    p->rchild = nullptr;
+                } else {
+                    EnQueue(queue, p->rchild);
+                }
+            }
+        }
+    }
+}
+
+/**
+ * 找到x(唯一)的所有祖先。
+ * 采用非递归的后序遍历，当访问到x时，栈中所有元素均为x的祖先
+ * @param t
+ * @param x
+ */
+void find_ancestor(BiTNode *t, DataType x,void visit(DataType item)) {
+    my_stack<BiTNode *> stack = my_stack<BiTNode *>();//初始栈
+    BiTNode *p = t, *r = nullptr;
+    while (p || !StackEmpty(stack)) {
+        if (p) {
+            Push(stack, p);
+            p = p->lchild;
+        } else {
+            GetTop(stack, p);//读栈顶结点
+            if (p->data == x) break;//访问到x
+            if (p->rchild && p->rchild != r) {//若右子树存在，且未被访问
+                p = p->rchild;
+            } else {
+                Pop(stack, p);
+                r = p;//记录最近访问过的结点
+                p = nullptr;//结点访问完后，重置p指针
+            }
+        }
+    }
+    Pop(stack,r);
+    while (!StackEmpty(stack)) {
+        Pop(stack, r);
+        visit(r->data);
+    }
 }
 
 //栈和队列的方法的具体实现
@@ -389,7 +469,3 @@ bool DeQueue(Queue<T> &Q, T &x) {
         return true;
     }
 }
-
-
-
-

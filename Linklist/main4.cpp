@@ -54,7 +54,7 @@ int main() {
     cout << endl;
     cout << "IsComplete?:" << IsComplete(t) << endl;
     cout << "Double branch node's number is:" << DsonNodes(t) << endl;
-    cout << "Double branch node's number is:" << DsonNodes2(root->lchild) << endl;
+    cout << "Double branch node's number is:" << DsonNodes2(t) << endl;
     swap(t);
     cout<<"t PerOrder:"<<endl;
     PerOrder(t,Visit);
@@ -63,5 +63,13 @@ int main() {
     InOrder(t,Visit);
     cout<<endl;
     cout<<"The Node at 5 in PerOrder is:"<<PerNode(t,5)<<endl;
+
+    BiTNode *tt=PerInCreat(A,B,1,9,1,9);
+    Search(tt,'D');
+    PerOrder(tt,Visit);
+    cout<<endl;
+
+    tt=PerInCreat(A,B,1,9,1,9);
+    find_ancestor(tt,'H',Visit);
     return 0;
 }
