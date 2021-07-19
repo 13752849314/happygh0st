@@ -122,59 +122,59 @@ Linklist/fast:
 	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/build
 .PHONY : Linklist/fast
 
-Tree/Tree.obj: Tree/Tree.cpp.obj
+BST/BST.obj: BST/BST.cpp.obj
 
-.PHONY : Tree/Tree.obj
-
-# target to build an object file
-Tree/Tree.cpp.obj:
-	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/Tree/Tree.cpp.obj
-.PHONY : Tree/Tree.cpp.obj
-
-Tree/Tree.i: Tree/Tree.cpp.i
-
-.PHONY : Tree/Tree.i
-
-# target to preprocess a source file
-Tree/Tree.cpp.i:
-	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/Tree/Tree.cpp.i
-.PHONY : Tree/Tree.cpp.i
-
-Tree/Tree.s: Tree/Tree.cpp.s
-
-.PHONY : Tree/Tree.s
-
-# target to generate assembly for a file
-Tree/Tree.cpp.s:
-	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/Tree/Tree.cpp.s
-.PHONY : Tree/Tree.cpp.s
-
-main4.obj: main4.cpp.obj
-
-.PHONY : main4.obj
+.PHONY : BST/BST.obj
 
 # target to build an object file
-main4.cpp.obj:
-	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/main4.cpp.obj
-.PHONY : main4.cpp.obj
+BST/BST.cpp.obj:
+	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/BST/BST.cpp.obj
+.PHONY : BST/BST.cpp.obj
 
-main4.i: main4.cpp.i
+BST/BST.i: BST/BST.cpp.i
 
-.PHONY : main4.i
+.PHONY : BST/BST.i
 
 # target to preprocess a source file
-main4.cpp.i:
-	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/main4.cpp.i
-.PHONY : main4.cpp.i
+BST/BST.cpp.i:
+	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/BST/BST.cpp.i
+.PHONY : BST/BST.cpp.i
 
-main4.s: main4.cpp.s
+BST/BST.s: BST/BST.cpp.s
 
-.PHONY : main4.s
+.PHONY : BST/BST.s
 
 # target to generate assembly for a file
-main4.cpp.s:
-	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/main4.cpp.s
-.PHONY : main4.cpp.s
+BST/BST.cpp.s:
+	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/BST/BST.cpp.s
+.PHONY : BST/BST.cpp.s
+
+main5.obj: main5.cpp.obj
+
+.PHONY : main5.obj
+
+# target to build an object file
+main5.cpp.obj:
+	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/main5.cpp.obj
+.PHONY : main5.cpp.obj
+
+main5.i: main5.cpp.i
+
+.PHONY : main5.i
+
+# target to preprocess a source file
+main5.cpp.i:
+	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/main5.cpp.i
+.PHONY : main5.cpp.i
+
+main5.s: main5.cpp.s
+
+.PHONY : main5.s
+
+# target to generate assembly for a file
+main5.cpp.s:
+	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/main5.cpp.s
+.PHONY : main5.cpp.s
 
 # Help Target
 help:
@@ -185,12 +185,12 @@ help:
 	@echo ... rebuild_cache
 	@echo ... Linklist
 	@echo ... edit_cache
-	@echo ... Tree/Tree.obj
-	@echo ... Tree/Tree.i
-	@echo ... Tree/Tree.s
-	@echo ... main4.obj
-	@echo ... main4.i
-	@echo ... main4.s
+	@echo ... BST/BST.obj
+	@echo ... BST/BST.i
+	@echo ... BST/BST.s
+	@echo ... main5.obj
+	@echo ... main5.i
+	@echo ... main5.s
 .PHONY : help
 
 

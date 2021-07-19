@@ -56,42 +56,42 @@ include CMakeFiles/Linklist.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Linklist.dir/flags.make
 
-CMakeFiles/Linklist.dir/main4.cpp.obj: CMakeFiles/Linklist.dir/flags.make
-CMakeFiles/Linklist.dir/main4.cpp.obj: ../main4.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Clion\datastruct\Linklist\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Linklist.dir/main4.cpp.obj"
-	D:\Clion\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Linklist.dir\main4.cpp.obj -c D:\Clion\datastruct\Linklist\main4.cpp
+CMakeFiles/Linklist.dir/main5.cpp.obj: CMakeFiles/Linklist.dir/flags.make
+CMakeFiles/Linklist.dir/main5.cpp.obj: ../main5.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Clion\datastruct\Linklist\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Linklist.dir/main5.cpp.obj"
+	D:\Clion\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Linklist.dir\main5.cpp.obj -c D:\Clion\datastruct\Linklist\main5.cpp
 
-CMakeFiles/Linklist.dir/main4.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Linklist.dir/main4.cpp.i"
-	D:\Clion\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Clion\datastruct\Linklist\main4.cpp > CMakeFiles\Linklist.dir\main4.cpp.i
+CMakeFiles/Linklist.dir/main5.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Linklist.dir/main5.cpp.i"
+	D:\Clion\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Clion\datastruct\Linklist\main5.cpp > CMakeFiles\Linklist.dir\main5.cpp.i
 
-CMakeFiles/Linklist.dir/main4.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Linklist.dir/main4.cpp.s"
-	D:\Clion\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Clion\datastruct\Linklist\main4.cpp -o CMakeFiles\Linklist.dir\main4.cpp.s
+CMakeFiles/Linklist.dir/main5.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Linklist.dir/main5.cpp.s"
+	D:\Clion\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Clion\datastruct\Linklist\main5.cpp -o CMakeFiles\Linklist.dir\main5.cpp.s
 
-CMakeFiles/Linklist.dir/Tree/Tree.cpp.obj: CMakeFiles/Linklist.dir/flags.make
-CMakeFiles/Linklist.dir/Tree/Tree.cpp.obj: ../Tree/Tree.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Clion\datastruct\Linklist\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Linklist.dir/Tree/Tree.cpp.obj"
-	D:\Clion\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Linklist.dir\Tree\Tree.cpp.obj -c D:\Clion\datastruct\Linklist\Tree\Tree.cpp
+CMakeFiles/Linklist.dir/BST/BST.cpp.obj: CMakeFiles/Linklist.dir/flags.make
+CMakeFiles/Linklist.dir/BST/BST.cpp.obj: ../BST/BST.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Clion\datastruct\Linklist\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Linklist.dir/BST/BST.cpp.obj"
+	D:\Clion\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Linklist.dir\BST\BST.cpp.obj -c D:\Clion\datastruct\Linklist\BST\BST.cpp
 
-CMakeFiles/Linklist.dir/Tree/Tree.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Linklist.dir/Tree/Tree.cpp.i"
-	D:\Clion\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Clion\datastruct\Linklist\Tree\Tree.cpp > CMakeFiles\Linklist.dir\Tree\Tree.cpp.i
+CMakeFiles/Linklist.dir/BST/BST.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Linklist.dir/BST/BST.cpp.i"
+	D:\Clion\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Clion\datastruct\Linklist\BST\BST.cpp > CMakeFiles\Linklist.dir\BST\BST.cpp.i
 
-CMakeFiles/Linklist.dir/Tree/Tree.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Linklist.dir/Tree/Tree.cpp.s"
-	D:\Clion\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Clion\datastruct\Linklist\Tree\Tree.cpp -o CMakeFiles\Linklist.dir\Tree\Tree.cpp.s
+CMakeFiles/Linklist.dir/BST/BST.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Linklist.dir/BST/BST.cpp.s"
+	D:\Clion\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Clion\datastruct\Linklist\BST\BST.cpp -o CMakeFiles\Linklist.dir\BST\BST.cpp.s
 
 # Object files for target Linklist
 Linklist_OBJECTS = \
-"CMakeFiles/Linklist.dir/main4.cpp.obj" \
-"CMakeFiles/Linklist.dir/Tree/Tree.cpp.obj"
+"CMakeFiles/Linklist.dir/main5.cpp.obj" \
+"CMakeFiles/Linklist.dir/BST/BST.cpp.obj"
 
 # External object files for target Linklist
 Linklist_EXTERNAL_OBJECTS =
 
-Linklist.exe: CMakeFiles/Linklist.dir/main4.cpp.obj
-Linklist.exe: CMakeFiles/Linklist.dir/Tree/Tree.cpp.obj
+Linklist.exe: CMakeFiles/Linklist.dir/main5.cpp.obj
+Linklist.exe: CMakeFiles/Linklist.dir/BST/BST.cpp.obj
 Linklist.exe: CMakeFiles/Linklist.dir/build.make
 Linklist.exe: CMakeFiles/Linklist.dir/linklibs.rsp
 Linklist.exe: CMakeFiles/Linklist.dir/objects1.rsp

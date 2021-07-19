@@ -230,6 +230,7 @@ int Bi_depth2(BiTNode *t) {
 BiTNode *PerInCreat(DataType A[], DataType B[], int strA, int finA, int strB, int finB) {
     auto *root = (BiTNode *) malloc(sizeof(BiTNode));//建立根节点
     root->data = A[strA];
+    root->weight = 2;//p142 19
     int i;
     for (i = strB; B[i] != root->data; i++);//根节点在中序遍历中的划分
     int llen = i - strB;//左子树长度
@@ -391,7 +392,7 @@ void Search(BiTNode *t, DataType x) {
  * @param t
  * @param x
  */
-void find_ancestor(BiTNode *t, DataType x,void visit(DataType item)) {
+void find_ancestor(BiTNode *t, DataType x, void visit(DataType item)) {
     my_stack<BiTNode *> stack = my_stack<BiTNode *>();//初始栈
     BiTNode *p = t, *r = nullptr;
     while (p || !StackEmpty(stack)) {
@@ -410,11 +411,73 @@ void find_ancestor(BiTNode *t, DataType x,void visit(DataType item)) {
             }
         }
     }
-    Pop(stack,r);
+    Pop(stack, r);
     while (!StackEmpty(stack)) {
         Pop(stack, r);
         visit(r->data);
     }
+}
+
+template<typename T>
+void find_ancestor1(BiTNode *t, DataType x, vector<T> &vector1, void (*operate)(DataType, vector<T> &)) {//寻找x的祖先
+    my_stack<BiTNode *> stack = my_stack<BiTNode *>();//初始栈
+    BiTNode *p = t, *r = nullptr;
+    while (p || !StackEmpty(stack)) {
+        if (p) {
+            Push(stack, p);
+            p = p->lchild;
+        } else {
+            GetTop(stack, p);//读栈顶结点
+            if (p->data == x) break;//访问到x
+            if (p->rchild && p->rchild != r) {//若右子树存在，且未被访问
+                p = p->rchild;
+            } else {
+                Pop(stack, p);
+                r = p;//记录最近访问过的结点
+                p = nullptr;//结点访问完后，重置p指针
+            }
+        }
+    }
+    Pop(stack, r);
+    while (!StackEmpty(stack)) {
+        Pop(stack, r);
+        operate(r->data, vector1);
+    }
+}
+
+template<typename T>
+void Operate(DataType item, vector<T> &vector) {//操作函数
+    vector.push_back(item);
+}
+
+/**
+ * 在二叉树t中找到x，y的公共祖先；
+ * 利用非递归的后序遍历，找到x和y的祖先并分别存储在一个vector中；
+ * 最后找到这两个vector中第一个相同的元素即为公共祖先。
+ * @param t
+ * @param x
+ * @param y
+ * @return 公共祖先的值
+ */
+DataType find_comm_ancestor(BiTNode *t, DataType x, DataType y) {
+    vector<DataType> vector1, vector2;
+    find_ancestor1(t, x, vector1, Operate);//找到x的所有祖先，存在vector1中
+    find_ancestor1(t, y, vector2, Operate);//找到y的所有祖先，存在vector2中
+    /*for(int i=0;i<vector1.size();i++){
+        cout<<vector1.at(i)<<"->";
+    }
+    cout<<endl;
+    for(int i=0;i<vector2.size();i++){
+        cout<<vector2.at(i)<<"->";
+    }*/
+    //下一步：在vector1和vector2中找到第一个相同的元素，即为x和y的公共祖先
+    for (DataType i : vector1) {
+        for (DataType j : vector2) {
+            if (i == j) return i;
+        }
+    }
+    cout << "Fail!" << endl;
+    return 1;
 }
 
 //栈和队列的方法的具体实现
@@ -469,3 +532,142 @@ bool DeQueue(Queue<T> &Q, T &x) {
         return true;
     }
 }
+
+/**
+ * 利用层次遍历，得到每个结点的层次，在统计每层的结点个数，最大的即为宽度
+ * @param t 二叉树的根节点
+ * @return 最大宽度
+ */
+int BTWidth(BiTNode *t) {
+    Queue<BiTNode *> queue = Queue<BiTNode *>();
+    BiTNode *p = t;
+    p->level = 1;
+    EnQueue(queue, p);
+    while (!QueueEmpty(queue)) {
+        DeQueue(queue, p);
+        //cout<<p->data<<"->";
+        if (p->lchild) {
+            p->lchild->level = p->level + 1;
+            EnQueue(queue, p->lchild);
+        }
+        if (p->rchild) {
+            p->rchild->level = p->level + 1;
+            EnQueue(queue, p->rchild);
+        }
+    }
+    int max = 0;
+    int max_level = queue.data[queue.rear - 1]->level;//最大层数
+    for (int i = 1; i <= max_level; i++) {
+        int n = 0;
+        for (int j = 0; j < queue.rear; j++) {
+            if (queue.data[j]->level == i) n++;
+        }
+        if (n > max) max = n;
+    }
+    return max;
+}
+
+/**
+ * 由满二叉树的前序序列求后序序列
+ * @param per 前序序列
+ * @param str1 起始
+ * @param fin1 结束
+ * @param post 存储后序序列
+ * @param str2 起始
+ * @param fin2 结束
+ */
+void PerToPost(DataType *per, int str1, int fin1, DataType *post, int str2, int fin2) {
+    int half;
+    if (fin1 >= str1) {
+        post[fin2] = per[str1];
+        half = (fin1 - str1) / 2;
+        PerToPost(per, str1 + 1, str1 + half, post, str2, str2 + half - 1);
+        PerToPost(per, str1 + half + 1, fin1, post, str2 + half, fin2 - 1);
+    }
+}
+
+/**
+ * 利用前序遍历依次找到从左到右的叶节点
+ * @param t 二叉树根节点
+ * @return 链表头结点
+ */
+BiTNode *Make_Leaf_to_Linklist(BiTNode *t) {
+    auto re = (BiTNode *) malloc(sizeof(BiTNode));//头结点
+    BiTNode *q = re, *p = t;//操作指针
+    my_stack<BiTNode *> stack = my_stack<BiTNode *>();
+    while (p || !StackEmpty(stack)) {
+        if (p) {
+            if (p->lchild == nullptr && p->rchild == nullptr) {//是叶节点
+                q->rchild = p;
+                q = p;
+            }
+            Push(stack, p);
+            p = p->lchild;
+        } else {
+            Pop(stack, p);
+            p = p->rchild;
+        }
+    }
+    return re;
+}
+
+/**
+ * 判断二叉树t1和t2是否相似
+ * @param t1
+ * @param t2
+ * @return
+ */
+bool similar(BiTNode *t1, BiTNode *t2) {
+    bool left, right;
+    if (t1 == nullptr && t2 == nullptr) return true;
+    else if (t1 == nullptr || t2 == nullptr) return false;
+    else {
+        left = similar(t1->lchild, t2->lchild);
+        right = similar(t1->rchild, t2->rchild);
+        return left && right;
+    }
+}
+
+
+/**
+ * 二叉树的带权路径长度WPL；
+ * 算法思想：利用递归的先序遍历，将每个结点的深度作为递归函数的一个参数；
+ * 1.若该结点为叶结点，则变量wpl加上该结点的深度与权值的乘积；
+ * 2.若为非叶结点，左子树不空则对左子树调用递归算法，右子树不空则对右子树调用递归算法。
+ * @param t
+ * @param deep
+ * @param wpl
+ */
+void WPL(BiTNode *t, int deep, int &wpl) {
+    if (t->lchild == nullptr && t->rchild == nullptr) {
+        wpl += deep * t->weight;
+//        cout<<"deep:"<<deep<<"weight"<<t->weight<<endl;
+//        getchar();
+    }
+    if (t->lchild != nullptr) {
+        WPL(t->lchild, deep + 1, wpl);
+    }
+    if (t->rchild != nullptr) {
+        WPL(t->rchild, deep + 1, wpl);
+    }
+}
+
+/**
+ * 利用递归的中序遍历
+ * @param t
+ * @param deep
+ */
+void BtreeToExp(BiTNode *t, int deep) {
+    if (t == nullptr) return;
+    else if (t->lchild == nullptr && t->rchild == nullptr) {
+        cout << t->data;
+    } else {
+        if (deep > 0) cout << "(";
+        BtreeToExp(t->lchild, deep + 1);
+        cout << t->data;
+        BtreeToExp(t->rchild, deep + 1);
+        if (deep > 0) cout << ")";
+    }
+}
+
+

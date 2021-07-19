@@ -4,15 +4,18 @@
 
 #ifndef LINKLIST_TREE_H
 #define LINKLIST_TREE_H
-#define Maxsize 100
 
-#include <cstdlib>
 #include <iostream>
+#include <cstdlib>
+#include <vector>
 
+#define Maxsize 100
 using namespace std;
 typedef char DataType;
 
 typedef struct BiTNode {
+    int level;//p142 14
+    int weight=2;//p142 19
     DataType data;
     struct BiTNode *lchild, *rchild;
 } BiTNode, *BiTree;
@@ -52,7 +55,34 @@ void DeleteXTree(BiTNode *t);
 void Search(BiTNode *t, DataType x);
 
 //p142 12
-void find_ancestor(BiTNode *t,DataType x,void visit(DataType item));//找到x(唯一)的全部祖先
+void find_ancestor(BiTNode *t, DataType x, void visit(DataType item));//找到x(唯一)的全部祖先
+
+//p142 13
+template<typename T>
+void find_ancestor1(BiTNode *t, DataType x, vector<T> &vector1, void operate(DataType item, vector<T> &vector));
+
+template<typename T>
+void Operate(DataType item, vector<T> &vector);
+
+DataType find_comm_ancestor(BiTNode *t, DataType x, DataType y);
+
+//p142 14
+int BTWidth(BiTNode *t);
+
+//p142 15
+void PerToPost(DataType *per, int str1, int fin1, DataType *post, int str2, int fin2);
+
+//p142 16
+BiTNode *Make_Leaf_to_Linklist(BiTNode *t);
+
+//p142 17
+bool similar(BiTNode *t1,BiTNode *t2);
+
+//p142 19
+void WPL(BiTNode *t,int deep,int &wpl);
+
+//p142 20
+void BtreeToExp(BiTNode *t,int deep);
 
 //下面是要用到的栈和队列的定义
 template<typename T>

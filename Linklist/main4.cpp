@@ -2,6 +2,7 @@
 // Created by 37157 on 2021/5/7.
 //
 #include <iostream>
+#include <string.h>
 #include "Tree/Tree.h"
 
 using namespace std;
@@ -71,5 +72,36 @@ int main() {
 
     tt=PerInCreat(A,B,1,9,1,9);
     find_ancestor(tt,'H',Visit);
+    cout<<endl;
+
+    DataType comm=find_comm_ancestor(tt,'E','F');
+    cout<<"Comm Ancestor is:"<<comm<<endl;
+
+    cout<<"The max width is:"<<BTWidth(tt)<<endl;
+
+    DataType *per="ABCDEFG",post[Maxsize];
+    PerToPost(per,0,6,post,0,6);
+    for(int i=0;i<strlen(per);i++){
+        cout<<post[i]<<"->";
+    }
+    cout<<endl;
+
+    BiTNode *re=Make_Leaf_to_Linklist(tt);
+    BiTNode *op=re;
+    while(op->rchild){
+        cout<<op->rchild->data<<"->";
+        op=op->rchild;
+    }
+    cout<<endl;
+
+    BiTNode *ttt=PerInCreat(A,B,1,9,1,9);
+    int wpl=0;
+    WPL(ttt,0,wpl);
+    cout<<"WPL="<<wpl<<endl;
+
+    BtreeToExp(ttt,0);
+    cout<<endl;
+
+
     return 0;
 }
