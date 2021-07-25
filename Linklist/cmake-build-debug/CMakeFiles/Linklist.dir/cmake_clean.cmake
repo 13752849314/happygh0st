@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Linklist.dir/BST/BST.cpp.obj"
-  "CMakeFiles/Linklist.dir/main5.cpp.obj"
+  "CMakeFiles/Linklist.dir/Graph/Graph.cpp.obj"
+  "CMakeFiles/Linklist.dir/main6.cpp.obj"
   "Linklist.exe"
   "Linklist.exe.manifest"
   "Linklist.pdb"

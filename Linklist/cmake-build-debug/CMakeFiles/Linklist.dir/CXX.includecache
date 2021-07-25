@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-D:/Clion/datastruct/Linklist/BST/BST.h
+D:/Clion/datastruct/Linklist/Graph/Graph.cpp
+Graph.h
+D:/Clion/datastruct/Linklist/Graph/Graph.h
+
+D:/Clion/datastruct/Linklist/Graph/Graph.h
 iostream
 -
-
-D:/Clion/datastruct/Linklist/main5.cpp
-BST/BST.h
-D:/Clion/datastruct/Linklist/BST/BST.h
 

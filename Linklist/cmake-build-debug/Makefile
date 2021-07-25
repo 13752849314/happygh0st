@@ -122,59 +122,59 @@ Linklist/fast:
 	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/build
 .PHONY : Linklist/fast
 
-BST/BST.obj: BST/BST.cpp.obj
+Graph/Graph.obj: Graph/Graph.cpp.obj
 
-.PHONY : BST/BST.obj
-
-# target to build an object file
-BST/BST.cpp.obj:
-	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/BST/BST.cpp.obj
-.PHONY : BST/BST.cpp.obj
-
-BST/BST.i: BST/BST.cpp.i
-
-.PHONY : BST/BST.i
-
-# target to preprocess a source file
-BST/BST.cpp.i:
-	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/BST/BST.cpp.i
-.PHONY : BST/BST.cpp.i
-
-BST/BST.s: BST/BST.cpp.s
-
-.PHONY : BST/BST.s
-
-# target to generate assembly for a file
-BST/BST.cpp.s:
-	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/BST/BST.cpp.s
-.PHONY : BST/BST.cpp.s
-
-main5.obj: main5.cpp.obj
-
-.PHONY : main5.obj
+.PHONY : Graph/Graph.obj
 
 # target to build an object file
-main5.cpp.obj:
-	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/main5.cpp.obj
-.PHONY : main5.cpp.obj
+Graph/Graph.cpp.obj:
+	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/Graph/Graph.cpp.obj
+.PHONY : Graph/Graph.cpp.obj
 
-main5.i: main5.cpp.i
+Graph/Graph.i: Graph/Graph.cpp.i
 
-.PHONY : main5.i
+.PHONY : Graph/Graph.i
 
 # target to preprocess a source file
-main5.cpp.i:
-	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/main5.cpp.i
-.PHONY : main5.cpp.i
+Graph/Graph.cpp.i:
+	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/Graph/Graph.cpp.i
+.PHONY : Graph/Graph.cpp.i
 
-main5.s: main5.cpp.s
+Graph/Graph.s: Graph/Graph.cpp.s
 
-.PHONY : main5.s
+.PHONY : Graph/Graph.s
 
 # target to generate assembly for a file
-main5.cpp.s:
-	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/main5.cpp.s
-.PHONY : main5.cpp.s
+Graph/Graph.cpp.s:
+	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/Graph/Graph.cpp.s
+.PHONY : Graph/Graph.cpp.s
+
+main6.obj: main6.cpp.obj
+
+.PHONY : main6.obj
+
+# target to build an object file
+main6.cpp.obj:
+	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/main6.cpp.obj
+.PHONY : main6.cpp.obj
+
+main6.i: main6.cpp.i
+
+.PHONY : main6.i
+
+# target to preprocess a source file
+main6.cpp.i:
+	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/main6.cpp.i
+.PHONY : main6.cpp.i
+
+main6.s: main6.cpp.s
+
+.PHONY : main6.s
+
+# target to generate assembly for a file
+main6.cpp.s:
+	$(MAKE) -f CMakeFiles\Linklist.dir\build.make CMakeFiles/Linklist.dir/main6.cpp.s
+.PHONY : main6.cpp.s
 
 # Help Target
 help:
@@ -185,12 +185,12 @@ help:
 	@echo ... rebuild_cache
 	@echo ... Linklist
 	@echo ... edit_cache
-	@echo ... BST/BST.obj
-	@echo ... BST/BST.i
-	@echo ... BST/BST.s
-	@echo ... main5.obj
-	@echo ... main5.i
-	@echo ... main5.s
+	@echo ... Graph/Graph.obj
+	@echo ... Graph/Graph.i
+	@echo ... Graph/Graph.s
+	@echo ... main6.obj
+	@echo ... main6.i
+	@echo ... main6.s
 .PHONY : help
 
 

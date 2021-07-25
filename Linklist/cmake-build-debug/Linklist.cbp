@@ -80,13 +80,13 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="D:/Clion/datastruct/Linklist/BST/BST.cpp">
+		<Unit filename="D:/Clion/datastruct/Linklist/Graph/Graph.cpp">
 			<Option target="Linklist"/>
 		</Unit>
-		<Unit filename="D:/Clion/datastruct/Linklist/BST/BST.h">
+		<Unit filename="D:/Clion/datastruct/Linklist/Graph/Graph.h">
 			<Option target="Linklist"/>
 		</Unit>
-		<Unit filename="D:/Clion/datastruct/Linklist/main5.cpp">
+		<Unit filename="D:/Clion/datastruct/Linklist/main6.cpp">
 			<Option target="Linklist"/>
 		</Unit>
 		<Unit filename="D:/Clion/datastruct/Linklist/CMakeLists.txt">

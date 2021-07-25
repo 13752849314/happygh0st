@@ -33,6 +33,7 @@ void PerOrder(BiTNode *t) {
         PerOrder(t->rchild);
     }
 }
+
 void InOrder(BiTNode *t) {
     if (t != nullptr) {
         InOrder(t->lchild);

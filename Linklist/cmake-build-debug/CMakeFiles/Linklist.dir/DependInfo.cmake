@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "D:/Clion/datastruct/Linklist/BST/BST.cpp" "D:/Clion/datastruct/Linklist/cmake-build-debug/CMakeFiles/Linklist.dir/BST/BST.cpp.obj"
-  "D:/Clion/datastruct/Linklist/main5.cpp" "D:/Clion/datastruct/Linklist/cmake-build-debug/CMakeFiles/Linklist.dir/main5.cpp.obj"
+  "D:/Clion/datastruct/Linklist/Graph/Graph.cpp" "D:/Clion/datastruct/Linklist/cmake-build-debug/CMakeFiles/Linklist.dir/Graph/Graph.cpp.obj"
+  "D:/Clion/datastruct/Linklist/main6.cpp" "D:/Clion/datastruct/Linklist/cmake-build-debug/CMakeFiles/Linklist.dir/main6.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
