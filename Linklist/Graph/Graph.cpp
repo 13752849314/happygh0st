@@ -4,6 +4,8 @@
 
 #include "Graph.h"
 
+bool visited[MaxVertexNum];
+
 /**
  * 构造邻接矩阵
  * @param G
@@ -71,4 +73,53 @@ bool Adjacent(MGraph *G, VertexType x, VertexType y, bool direction) {
         if (G->Edge[x_index][y_index] != 0 || G->Edge[y_index][x_index] != 0) return true;
     }
     return false;
+}
+
+void DFSM(MGraph *G, int i) {
+    int j;
+    cout << G->Vex[i] << "->";
+    visited[i] = true;
+    for (j = 0; j < G->vexnum; j++) {
+        if (G->Edge[i][j] != 0 && !visited[j]) {
+            DFSM(G, j);
+        }
+    }
+}
+
+void DFS(MGraph *G) {
+    int i;
+    for (i = 0; i < G->vexnum; i++) {//标志向量初始化
+        visited[i] = false;
+    }
+    for (i = 0; i < G->vexnum; i++) {
+        if (!visited[i]) {
+            DFSM(G, i);
+        }
+    }
+}
+
+void BFS(MGraph *G, int k) {
+    int i, j, f = 0, r = 0;
+    int cq[MaxVertexNum];//定义队列
+    for (i = 0; i < MaxVertexNum; i++) {//标志向量初始化
+        visited[i] = false;
+    }
+    for (i = 0; i < MaxVertexNum; i++) {//队列初始化
+        cq[i] = -1;
+    }
+    cout << G->Vex[k] << "->";
+    visited[k] = true;
+    cq[r] = k;
+    while (cq[f] != -1) {
+        i = cq[f];
+        f = f + 1;
+        for (j = 0; j < G->vexnum; j++) {
+            if (G->Edge[i][j] != 0 && !visited[j]) {
+                cout << G->Vex[j] << "->";
+                visited[j] = true;
+                r = r + 1;
+                cq[r] = j;
+            }
+        }
+    }
 }

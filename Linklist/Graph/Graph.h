@@ -34,9 +34,15 @@ typedef struct {
     int vexnum, arcnum;//图的顶点数和边数
 } ALGrapg;
 
-void Init_MGraph(MGraph *&G,bool direction);
+void Init_MGraph(MGraph *&G, bool direction);
 
-int Get_vex_num(MGraph *G,VertexType x);
+int Get_vex_num(MGraph *G, VertexType x);
 
-bool Adjacent(MGraph *G,VertexType x,VertexType y,bool direction);
+bool Adjacent(MGraph *G, VertexType x, VertexType y, bool direction);
+
+void DFSM(MGraph *G,int i);
+
+void DFS(MGraph *G);
+
+void BFS(MGraph *G,int k);
 #endif //LINKLIST_GRAPH_H

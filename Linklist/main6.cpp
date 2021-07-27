@@ -6,5 +6,8 @@
 int main() {
     auto G = (MGraph *) malloc(sizeof(MGraph));
     Init_MGraph(G, true);
+    DFS(G);
+    cout<<endl;
+    BFS(G,0);
     return 0;
 }
