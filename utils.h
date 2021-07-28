@@ -31,6 +31,14 @@ void print(SqList<T> L) {
 }
 
 template<typename T>
+bool Insert_all(SqList<T> &L, T arr[], int n) {
+    for (int i = 0; i < n; i++) {
+        append(L, arr[i]);
+    }
+    return true;
+}
+
+template<typename T>
 bool append(SqList<T> &L, T a);
 
 template<typename T>
@@ -1103,21 +1111,93 @@ T Min(T arr[], int n) {
  * @param n
  */
 void count_sort(int arr[], int re[], int n) {
-    int k = Max(arr, n);
-    int *count = new int[k + 1];
-    for (int i = 0; i < k + 1; i++) {
+    int max = Max(arr, n);
+    int min = Min(arr, n);
+    int count_len = max - min + 1;
+    int *count = new int[count_len];
+    for (int i = 0; i < count_len; i++) {
         count[i] = 0;
     }
     for (int i = 0; i < n; i++) {
-        count[arr[i]]++;
+        count[arr[i] - min]++;
     }
-    int index = 0;
-    for (int i = 0; i < k + 1; i++) {
-        while (count[i] > 0) {
-            re[index++] = i;
-            count[i]--;
+    for (int i = 1; i < count_len; i++) {
+        count[i] += count[i - 1];
+    }
+    for (int i = 0; i < n; i++) {
+        re[--count[arr[i] - min]] = arr[i];
+    }
+    free(count);
+}
+
+int maxbit(int arr[], int n) {
+    int max = Max(arr, n);
+    int d = 0;
+    while (max != 0) {
+        max /= 10;
+        d++;
+    }
+    return d;
+}
+
+/**
+ * 基数排序：
+ * 1.平均时间复杂度O(d(n+r)) 最好O(d(n+r)) 最坏O(d(n+r))
+ * 2.空间复杂度 O(r)
+ * 3.Out-place
+ * 4.稳定
+ * @param arr
+ * @param n
+ */
+void base_sort(int arr[], int n) {
+    int d = maxbit(arr, n);
+    int *temp = new int[n];
+    int *count = new int[10];//计数器
+    int i, j, k, radix = 1;
+    for (i = 1; i <= d; i++) {//进行d次排序
+        for (j = 0; j < 10; j++) {//清空计数器
+            count[j] = 0;
+        }
+        for (j = 0; j < n; j++) {//每位进行排序时采用计数排序
+            k = (arr[j] / radix) % 10;
+            count[k]++;
+        }
+        for (j = 1; j < 10; j++) {
+            count[j] += count[j - 1];
+        }
+        for (j = n - 1; j >= 0; j--) {
+            k = (arr[j] / radix) % 10;
+            temp[--count[k]] = arr[j];
+        }
+        for (j = 0; j < n; j++) {//将临时数组的内容复制回arr中
+            arr[j] = temp[j];
+        }
+        radix *= 10;
+    }
+    free(temp);
+    free(count);
+}
+
+/**
+ * 折半查找
+ * @tparam T
+ * @param L
+ * @param key
+ * @return
+ */
+template<typename T>
+int Binary_Search(SqList<T> L, T key) {
+    int low = 0, high = L.length - 1, mid;
+    while (low <= high) {
+        mid = (low + high) / 2;
+        if (L.data[mid] == key) return mid;
+        else if (L.data[mid] > key) {
+            high = mid - 1;
+        } else {
+            low = mid + 1;
         }
     }
+    return -1;//查找失败
 }
 
 #endif //UTILS_UTILS_H
