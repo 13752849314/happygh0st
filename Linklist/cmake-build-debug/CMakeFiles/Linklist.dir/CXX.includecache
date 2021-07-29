@@ -9,8 +9,18 @@
 D:/Clion/datastruct/Linklist/Graph/Graph.cpp
 Graph.h
 D:/Clion/datastruct/Linklist/Graph/Graph.h
+../utils.h
+D:/Clion/datastruct/Linklist/utils.h
 
 D:/Clion/datastruct/Linklist/Graph/Graph.h
+iostream
+-
+
+D:/Clion/datastruct/Linklist/main6.cpp
+Graph/Graph.h
+D:/Clion/datastruct/Linklist/Graph/Graph.h
+
+D:/Clion/datastruct/Linklist/utils.h
 iostream
 -
 

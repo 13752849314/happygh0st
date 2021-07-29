@@ -89,6 +89,9 @@
 		<Unit filename="D:/Clion/datastruct/Linklist/main6.cpp">
 			<Option target="Linklist"/>
 		</Unit>
+		<Unit filename="D:/Clion/datastruct/Linklist/utils.h">
+			<Option target="Linklist"/>
+		</Unit>
 		<Unit filename="D:/Clion/datastruct/Linklist/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

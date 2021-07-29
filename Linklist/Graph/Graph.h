@@ -40,9 +40,23 @@ int Get_vex_num(MGraph *G, VertexType x);
 
 bool Adjacent(MGraph *G, VertexType x, VertexType y, bool direction);
 
-void DFSM(MGraph *G,int i);
+void DFSM(MGraph *G, int i);
 
 void DFS(MGraph *G);
 
-void BFS(MGraph *G,int k);
+void BFS(MGraph *G, int k);
+
+void BFS1(MGraph *G, int v);
+
+void Init_ALGrapg(ALGrapg *&G, bool direction);
+
+int Get_vex_num(ALGrapg *G, VertexType x);
+
+bool Adjacent(ALGrapg *G, VertexType x, VertexType y, bool direction);
+
+void DFSM(ALGrapg *G,int v);
+
+void DFS(ALGrapg *G);
+
+void BFS(ALGrapg *G,int k);
 #endif //LINKLIST_GRAPH_H

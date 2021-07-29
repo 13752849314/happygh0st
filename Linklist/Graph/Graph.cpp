@@ -3,13 +3,14 @@
 //
 
 #include "Graph.h"
+#include "../utils.h"
 
 bool visited[MaxVertexNum];
 
 /**
  * 构造邻接矩阵
  * @param G
- * @param direction 是否为有向图
+ * @param direction 是否为无向图
  */
 void Init_MGraph(MGraph *&G, bool direction) {
     int vex, arc;
@@ -62,7 +63,7 @@ int Get_vex_num(MGraph *G, VertexType x) {
  * @param G
  * @param x
  * @param y
- * @param direction 是否有向图
+ * @param direction 是否无向图
  * @return
  */
 bool Adjacent(MGraph *G, VertexType x, VertexType y, bool direction) {
@@ -120,6 +121,139 @@ void BFS(MGraph *G, int k) {
                 r = r + 1;
                 cq[r] = j;
             }
+        }
+    }
+}
+
+void BFS1(MGraph *G, int v) {
+    for (int i = 0; i < G->vexnum; i++) {
+        visited[i] = false;
+    }
+    cout << G->Vex[v] << "->";
+    visited[v] = true;
+    LinkQueue<int> L;
+    L.EnQueue(v);
+    while (!L.Empty()) {
+        L.DeQueue(v);
+        for (int i = 0; i < G->vexnum; i++) {
+            if (G->Edge[v][i] != 0 && !visited[i]) {
+                cout << G->Vex[i] << "->";
+                visited[i] = true;
+                L.EnQueue(i);
+            }
+        }
+    }
+}
+
+int Get_vex_num(ALGrapg *G, VertexType x) {
+    for (int i = 0; i < G->vexnum; i++) {
+        if (G->vertices[i].data == x) return i;
+    }
+    return -1;
+}
+
+void Init_ALGrapg(ALGrapg *&G, bool direction) {
+    cout << "Please input the number of vertex and arc:" << endl;
+    cin >> G->vexnum >> G->arcnum;
+    cout << "Please input the name of vertex:" << endl;
+    for (int i = 0; i < G->vexnum; i++) {
+        cin >> G->vertices[i].data;
+        G->vertices[i].first = nullptr;
+    }
+    VertexType a, b;
+    EdgeType value;
+    cout << "Please input the arc such as (A B 3)" << endl;
+    for (int i = 0; i < G->arcnum; i++) {
+        cin >> a >> b >> value;
+        int a_index = Get_vex_num(G, a);
+        int b_index = Get_vex_num(G, b);
+        ArcNode *s;
+        s = (ArcNode *) malloc(sizeof(ArcNode));
+        s->info = value;
+        s->adjvex = b_index;//邻接点序号
+        s->next = G->vertices[a_index].first;
+        G->vertices[a_index].first = s;//将新结点插入顶点a的边表头部
+        if (direction) {//是无向图
+            s = (ArcNode *) malloc(sizeof(ArcNode));
+            s->info = value;
+            s->adjvex = a_index;
+            s->next = G->vertices[b_index].first;
+            G->vertices[b_index].first = s;
+        }
+    }
+}
+
+bool Adjacent(ALGrapg *G, VertexType x, VertexType y, bool direction) {
+    int x_index = Get_vex_num(G, x);
+    int y_index = Get_vex_num(G, y);
+    ArcNode *p = G->vertices[x_index].first;
+    bool temp = false;
+    while (p) {
+        if (p->adjvex == y_index) {
+            temp = true;
+            break;
+        }
+        p = p->next;
+    }
+    p = G->vertices[y_index].first;
+    bool temp1 = false;
+    while (p) {
+        if (p->adjvex == x_index) {
+            temp1 = true;
+            break;
+        }
+        p = p->next;
+    }
+    if (direction) {
+        return temp && temp1;
+    } else {
+        return temp;
+    }
+}
+
+void DFSM(ALGrapg *G, int v) {
+    ArcNode *p;
+    cout << G->vertices[v].data << "->";
+    visited[v] = true;
+    p = G->vertices[v].first;
+    while (p) {
+        if (!visited[p->adjvex]) {
+            DFSM(G, p->adjvex);
+        }
+        p = p->next;
+    }
+}
+
+void DFS(ALGrapg *G) {
+    for (int i = 0; i < G->vexnum; i++) {
+        visited[i] = false;
+    }
+    for (int i = 0; i < G->vexnum; i++) {
+        if (!visited[i]) {
+            DFSM(G, i);
+        }
+    }
+}
+
+void BFS(ALGrapg *G, int k) {
+    ArcNode *p;
+    LinkQueue<int> L;
+    for (int i = 0; i < G->vexnum; i++) {
+        visited[i] = false;
+    }
+    cout << G->vertices[k].data << "->";
+    visited[k] = true;
+    L.EnQueue(k);
+    while (!L.Empty()) {
+        L.DeQueue(k);
+        p = G->vertices[k].first;
+        while (p) {
+            if (!visited[p->adjvex]) {
+                cout << G->vertices[p->adjvex].data << "->";
+                visited[p->adjvex] = true;
+                L.EnQueue(p->adjvex);
+            }
+            p = p->next;
         }
     }
 }
