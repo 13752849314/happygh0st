@@ -8,6 +8,7 @@
 #include <iostream>
 
 #define MaxVertexNum 100 //最大顶点数目
+#define INF 0xfffff
 using namespace std;
 
 //邻接矩阵
@@ -36,6 +37,8 @@ typedef struct {
 
 void Init_MGraph(MGraph *&G, bool direction);
 
+EdgeType **Get_matrix(MGraph *G);
+
 int Get_vex_num(MGraph *G, VertexType x);
 
 bool Adjacent(MGraph *G, VertexType x, VertexType y, bool direction);
@@ -54,9 +57,52 @@ int Get_vex_num(ALGrapg *G, VertexType x);
 
 bool Adjacent(ALGrapg *G, VertexType x, VertexType y, bool direction);
 
-void DFSM(ALGrapg *G,int v);
+void DFSM(ALGrapg *G, int v);
 
 void DFS(ALGrapg *G);
 
-void BFS(ALGrapg *G,int k);
+void BFS(ALGrapg *G, int k);
+
+MGraph *Convert(ALGrapg *G);
+
+//prim
+void Prim(MGraph *G);
+
+void format_mat(MGraph *&G);
+
+void recover_mat(MGraph *&G);
+
+//Kruskal
+class Arc {
+public:
+    int str;
+    int fin;
+    EdgeType weight;
+
+    Arc() {
+        str = 0;
+        fin = 0;
+        weight = 0;
+    }
+
+    Arc(int str, int fin, EdgeType weight) {
+        this->str = str;
+        this->fin = fin;
+        this->weight = weight;
+    }
+
+    bool operator>=(const Arc &arc) {//重载≥,用于排序
+        return this->weight >= arc.weight;
+    }
+};
+
+
+void Kruskal(MGraph *G);
+
+//Dijkstra
+void Dijkstra(MGraph *G, VertexType source);
+
+//Floyd
+EdgeType **Floyd(MGraph *G);
+
 #endif //LINKLIST_GRAPH_H

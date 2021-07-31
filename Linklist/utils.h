@@ -51,6 +51,18 @@ bool append(SqList<T> &L, T a) {
     return false;
 }
 
+template<typename T>
+SqList<T> copy(SqList<T> L);
+
+template<typename T>
+SqList<T> copy(SqList<T> L) {
+    SqList<T> re = SqList<T>();
+    re.length = 0;
+    for (int i = 0; i < L.length; i++) {
+        append(re, L.data[i]);
+    }
+    return re;
+}
 
 template<typename T>
 bool Insert(SqList<T> &L, int i, T a);
