@@ -73,7 +73,7 @@ bool Insert(SqList<T> &L, int i, T a) {
         cout << "Insert fail!" << endl;
         return false;
     }
-    for (int j = L.length; j >= i; j--) {//ºóÒÆ
+    for (int j = L.length; j >= i; j--) {//åç§»
         L.data[j] = L.data[j - 1];
     }
     L.data[i - 1] = a;
@@ -88,7 +88,7 @@ bool Delete(SqList<T> &L, int i, T &e) {
         return false;
     }
     e = L.data[i - 1];
-    for (int j = i; j < L.length; j++) {//ÏòÇ°ÒÆ¶¯
+    for (int j = i; j < L.length; j++) {//å‘å‰ç§»åŠ¨
         L.data[j - 1] = L.data[j];
     }
     L.length--;
@@ -126,7 +126,7 @@ public:
 template<typename T>
 class Linklist : public Node<T> {
 private:
-    Node<T> *head;//Í·½áµã
+    Node<T> *head;//å¤´ç»“ç‚¹
 public:
     Linklist();
 
@@ -150,7 +150,7 @@ public:
 };
 
 /**
- * ÎŞ²ÎµÄ¹¹Ôìº¯Êı
+ * æ— å‚çš„æ„é€ å‡½æ•°
  * @tparam T
  */
 template<typename T>
@@ -163,10 +163,10 @@ inline Linklist<T>::Linklist() {
 }
 
 /**
- * ´ø²ÎµÄ¹¹Ôìº¯Êı£¬ÓÃÊı×éAµÄÔªËØµÄË³Ğò´´½¨µ¥Á´±í
+ * å¸¦å‚çš„æ„é€ å‡½æ•°ï¼Œç”¨æ•°ç»„Açš„å…ƒç´ çš„é¡ºåºåˆ›å»ºå•é“¾è¡¨
  * @tparam T
  * @param A
- * @param n Êı×é³¤¶È
+ * @param n æ•°ç»„é•¿åº¦
  */
 template<typename T>
 Linklist<T>::Linklist(T *A, int n) {
@@ -183,7 +183,7 @@ Linklist<T>::Linklist(T *A, int n) {
 }
 
 /**
- * ÅĞ¶ÏÊÇ·ñÎª¿Õ
+ * åˆ¤æ–­æ˜¯å¦ä¸ºç©º
  * @tparam T
  * @return
  */
@@ -193,7 +193,7 @@ inline bool Linklist<T>::Empty() {
 }
 
 /**
- * »ñÈ¡Á´±íµÄ³¤¶È
+ * è·å–é“¾è¡¨çš„é•¿åº¦
  * @tparam T
  * @return
  */
@@ -209,7 +209,7 @@ int Linklist<T>::GetLen() {
 }
 
 /**
- * Í·²å·¨²åÈët
+ * å¤´æ’æ³•æ’å…¥t
  * @tparam T
  * @param t
  */
@@ -223,7 +223,7 @@ void Linklist<T>::Head_insert(T t) {
 }
 
 /**
- * »ñÈ¡µÚi¸ö½áµã
+ * è·å–ç¬¬iä¸ªç»“ç‚¹
  * @tparam T
  * @param i
  * @return
@@ -242,7 +242,7 @@ Node<T> *Linklist<T>::GetNode(int i) {
 }
 
 /**
- * ÔÚµÚi¸öÎ»ÖÃ²åÈëelem
+ * åœ¨ç¬¬iä¸ªä½ç½®æ’å…¥elem
  * @tparam T
  * @param i
  * @param elem
@@ -264,9 +264,9 @@ bool Linklist<T>::insert(int i, T elem) {
 }
 
 /**
- * ±éÀúÁ´±í
+ * éå†é“¾è¡¨
  * @tparam T
- * @param print ±éÀúº¯Êı
+ * @param print éå†å‡½æ•°
  */
 template<typename T>
 void Linklist<T>::traverse(void (*print)(T &elem)) {
@@ -313,7 +313,7 @@ void print(T &elem) {
 template<typename T>
 class LinkStack : Node<T> {
 private:
-    Node<T> *top;//Õ»¶¥Ö¸Õë
+    Node<T> *top;//æ ˆé¡¶æŒ‡é’ˆ
 public:
     LinkStack();
 
@@ -327,7 +327,7 @@ public:
 };
 
 /**
- * ²»´ø²ÎµÄ¹¹Ôì·½·¨
+ * ä¸å¸¦å‚çš„æ„é€ æ–¹æ³•
  * @tparam T
  */
 template<typename T>
@@ -506,6 +506,8 @@ public:
     int Get_width();
 
     TNode<T> *BST_Search(T key);
+    
+    static bool balance(TNode<T> *t);
 };
 
 template<typename T>
@@ -516,10 +518,10 @@ Tree<T>::Tree() {
 }
 
 /**
- * Í¨¹ıÇ°ĞòĞòÁĞºÍÖĞĞòĞòÁĞ´´½¨¶ş²æÊ÷
+ * é€šè¿‡å‰åºåºåˆ—å’Œä¸­åºåºåˆ—åˆ›å»ºäºŒå‰æ ‘
  * @tparam T
- * @param A ´æ´¢Ç°ĞòĞòÁĞ
- * @param B ´æ´¢ÖĞĞòĞòÁĞ
+ * @param A å­˜å‚¨å‰åºåºåˆ—
+ * @param B å­˜å‚¨ä¸­åºåºåˆ—
  * @param strA
  * @param finA
  * @param strB
@@ -535,7 +537,7 @@ Tree<T>::Tree(T A[], T B[], int strA, int finA, int strB, int finB) {
 }
 
 /**
- * ´´½¨¶ş²æÅÅĞòÊ÷
+ * åˆ›å»ºäºŒå‰æ’åºæ ‘
  * @tparam T
  * @param A
  * @param n
@@ -548,47 +550,47 @@ Tree<T>::Tree(T A[], int n) {
 }
 
 /**
- * Èôµ±Ç°½áµãcurr·Ç¿Õ£¬ÔÚcurrµÄ×ó×ÓÊ÷²åÈëÔªËØÖµÎªxµÄĞÂ½áµã£»
- * Ô­currËùÖ¸½áµãµÄ×ó×ÓÊ÷³ÉÎªĞÂ²åÈë½áµãµÄ×ó×ÓÊ÷£»
- * Èô²åÈë³É¹¦·µ»ØĞÂ²åÈë½áµãµÄÖ¸Õë£¬·ñÔò·µ»Ø¿ÕÖ¸Õë¡£
+ * è‹¥å½“å‰ç»“ç‚¹curréç©ºï¼Œåœ¨currçš„å·¦å­æ ‘æ’å…¥å…ƒç´ å€¼ä¸ºxçš„æ–°ç»“ç‚¹ï¼›
+ * åŸcurræ‰€æŒ‡ç»“ç‚¹çš„å·¦å­æ ‘æˆä¸ºæ–°æ’å…¥ç»“ç‚¹çš„å·¦å­æ ‘ï¼›
+ * è‹¥æ’å…¥æˆåŠŸè¿”å›æ–°æ’å…¥ç»“ç‚¹çš„æŒ‡é’ˆï¼Œå¦åˆ™è¿”å›ç©ºæŒ‡é’ˆã€‚
  * @tparam T
  * @param curr
  * @param elem
- * @return ĞÂ²åÈë½áµãµÄÖ¸Õë
+ * @return æ–°æ’å…¥ç»“ç‚¹çš„æŒ‡é’ˆ
  */
 template<typename T>
 TNode<T> *Tree<T>::InsertLeftNode(TNode<T> *curr, T elem) {
     if (curr == nullptr) return nullptr;
     TNode<T> *t, *s;
-    t = curr->lchild;//±£´æÔ­currËùÖ¸½áµãµÄ×ó×ÓÊ÷Ö¸Õë
+    t = curr->lchild;//ä¿å­˜åŸcurræ‰€æŒ‡ç»“ç‚¹çš„å·¦å­æ ‘æŒ‡é’ˆ
     s = (TNode<T> *) malloc(sizeof(TNode<T>));
     s->data = elem;
-    s->lchild = t;//ĞÂ²åÈë½áµãµÄ×ó×ÓÊ÷ÎªÔ­currµÄ×ó×ÓÊ÷
+    s->lchild = t;//æ–°æ’å…¥ç»“ç‚¹çš„å·¦å­æ ‘ä¸ºåŸcurrçš„å·¦å­æ ‘
     s->rchild = nullptr;
-    curr->lchild = s;//ĞÂ½áµã³ÉÎªcurrµÄ×ó×ÓÊ÷
-    return curr->lchild;//·µ»ØĞÂ²åÈë½áµãµÄÖ¸Õë
+    curr->lchild = s;//æ–°ç»“ç‚¹æˆä¸ºcurrçš„å·¦å­æ ‘
+    return curr->lchild;//è¿”å›æ–°æ’å…¥ç»“ç‚¹çš„æŒ‡é’ˆ
 }
 
 /**
- * Èôµ±Ç°½áµãcurr·Ç¿Õ£¬ÔÚcurrµÄÓÒ×ÓÊ÷²åÈëÔªËØÖµÎªxµÄĞÂ½áµã£»
- * Ô­currËùÖ¸½áµãµÄÓÒ×ÓÊ÷³ÉÎªĞÂ²åÈë½áµãµÄÓÒ×ÓÊ÷£»
- * Èô²åÈë³É¹¦·µ»ØĞÂ²åÈë½áµãµÄÖ¸Õë£¬·ñÔò·µ»Ø¿ÕÖ¸Õë¡£
+ * è‹¥å½“å‰ç»“ç‚¹curréç©ºï¼Œåœ¨currçš„å³å­æ ‘æ’å…¥å…ƒç´ å€¼ä¸ºxçš„æ–°ç»“ç‚¹ï¼›
+ * åŸcurræ‰€æŒ‡ç»“ç‚¹çš„å³å­æ ‘æˆä¸ºæ–°æ’å…¥ç»“ç‚¹çš„å³å­æ ‘ï¼›
+ * è‹¥æ’å…¥æˆåŠŸè¿”å›æ–°æ’å…¥ç»“ç‚¹çš„æŒ‡é’ˆï¼Œå¦åˆ™è¿”å›ç©ºæŒ‡é’ˆã€‚
  * @tparam T
  * @param curr
  * @param elem
- * @return ĞÂ²åÈë½áµãµÄÖ¸Õë
+ * @return æ–°æ’å…¥ç»“ç‚¹çš„æŒ‡é’ˆ
  */
 template<typename T>
 TNode<T> *Tree<T>::InsertRightNode(TNode<T> *curr, T elem) {
     if (curr == nullptr) return nullptr;
     TNode<T> *t, *s;
-    t = curr->rchild;//±£´æÔ­currËùÖ¸½áµãµÄÓÒ×ÓÊ÷Ö¸Õë
+    t = curr->rchild;//ä¿å­˜åŸcurræ‰€æŒ‡ç»“ç‚¹çš„å³å­æ ‘æŒ‡é’ˆ
     s = (TNode<T> *) malloc(sizeof(TNode<T>));
     s->data = elem;
-    s->rchild = t;//ĞÂ²åÈë½áµãµÄÓÒ×ÓÊ÷ÎªÔ­currµÄÓÒ×ÓÊ÷
+    s->rchild = t;//æ–°æ’å…¥ç»“ç‚¹çš„å³å­æ ‘ä¸ºåŸcurrçš„å³å­æ ‘
     s->lchild = nullptr;
-    curr->rchild = s;//ĞÂ½áµã³ÉÎªcurrµÄÓÒ×ÓÊ÷
-    return curr->rchild;//·µ»ØĞÂ²åÈë½áµãµÄÖ¸Õë
+    curr->rchild = s;//æ–°ç»“ç‚¹æˆä¸ºcurrçš„å³å­æ ‘
+    return curr->rchild;//è¿”å›æ–°æ’å…¥ç»“ç‚¹çš„æŒ‡é’ˆ
 }
 
 template<typename T>
@@ -695,14 +697,14 @@ void Tree<T>::PostOrder2(TNode<T> *t, void (*visit)(T &)) {
             stack.Push(p);
             p = p->lchild;
         } else {
-            p = stack.GetTop();//¶ÁÕ»¶¥½áµã
-            if (p->rchild && p->rchild != r) {//ÈôÓÒ×ÓÊ÷´æÔÚ£¬ÇÒÎ´±»·ÃÎÊ
+            p = stack.GetTop();//è¯»æ ˆé¡¶ç»“ç‚¹
+            if (p->rchild && p->rchild != r) {//è‹¥å³å­æ ‘å­˜åœ¨ï¼Œä¸”æœªè¢«è®¿é—®
                 p = p->rchild;
             } else {
                 stack.Pop(p);
                 visit(p->data);
-                r = p;//¼ÇÂ¼×î½ü·ÃÎÊ¹ıµÄ½áµã
-                p = nullptr;//½áµã·ÃÎÊÍêºó£¬ÖØÖÃpÖ¸Õë
+                r = p;//è®°å½•æœ€è¿‘è®¿é—®è¿‡çš„ç»“ç‚¹
+                p = nullptr;//ç»“ç‚¹è®¿é—®å®Œåï¼Œé‡ç½®pæŒ‡é’ˆ
             }
         }
     }
@@ -717,7 +719,7 @@ template<typename T>
 void Tree<T>::LevelOrder(TNode<T> *t, void (*visit)(T &elem)) {
     LinkQueue<TNode<T> *> queue;
     TNode<T> *p = t;
-    queue.EnQueue(p);//¸ù½ÚµãÈë¶Ó
+    queue.EnQueue(p);//æ ¹èŠ‚ç‚¹å…¥é˜Ÿ
     while (!queue.Empty()) {
         queue.DeQueue(p);
         visit(p->data);
@@ -793,20 +795,20 @@ TNode<T> *Tree<T>::PerInCreat(T A[], T B[], int strA, int finA, int strB, int fi
     t = (TNode<T> *) malloc(sizeof(TNode<T>));
     t->data = A[strA];
     int i;
-    for (i = strB; B[i] != t->data; i++);////¸ù½ÚµãÔÚÖĞĞò±éÀúÖĞµÄ»®·Ö
+    for (i = strB; B[i] != t->data; i++);////æ ¹èŠ‚ç‚¹åœ¨ä¸­åºéå†ä¸­çš„åˆ’åˆ†
     int llen = i - strB;
     int rlen = finB - i;
-    if (llen) {//µİ¹é½¨Á¢×ó×ÓÊ÷
+    if (llen) {//é€’å½’å»ºç«‹å·¦å­æ ‘
         t->lchild = PerInCreat(A, B, strA + 1, strA + llen, strB, strB + llen - 1);
     } else {
         t->lchild = nullptr;
     }
-    if (rlen) {//µİ¹é½¨Á¢ÓÒ×ÓÊ÷
+    if (rlen) {//é€’å½’å»ºç«‹å³å­æ ‘
         t->rchild = PerInCreat(A, B, finA - rlen + 1, finA, finB - rlen + 1, finB);
     } else {
         t->rchild = nullptr;
     }
-    return t;//·µ»Ø¸ù½áµã
+    return t;//è¿”å›æ ¹ç»“ç‚¹
 }
 
 template<typename T>
@@ -847,6 +849,16 @@ TNode<T> *Tree<T>::BST_Search(T key) {
 }
 
 template<typename T>
+bool Tree<T>::balance(TNode<T> *t) {
+    if (t == nullptr) return true;
+    int left = Get_depth(t->lchild);
+    int right = Get_depth(t->rchild);
+    int gap = left - right;
+    if (gap > 1 || gap < -1) return false;
+    return balance(t->lchild) && balance(t->rchild);
+}
+
+template<typename T>
 void Swap(T &a, T &b) {
     T temp;
     temp = a;
@@ -881,11 +893,11 @@ void bubble_sort(T arr[], int str, int fin) {
 }
 
 /**
- * Ã°ÅİÅÅĞò£º
- * 1.Æ½¾ùÊ±¼ä¸´ÔÓ¶ÈO(n^2) ×îºÃO(n) ×î»µO(n^2)
- * 2.¿Õ¼ä¸´ÔÓ¶ÈO(1)
+ * å†’æ³¡æ’åºï¼š
+ * 1.å¹³å‡æ—¶é—´å¤æ‚åº¦O(n^2) æœ€å¥½O(n) æœ€åO(n^2)
+ * 2.ç©ºé—´å¤æ‚åº¦O(1)
  * 3.In-place
- * 4.ÎÈ¶¨
+ * 4.ç¨³å®š
  * @tparam T
  * @param arr
  * @param n
@@ -902,11 +914,11 @@ void bubble_sort(T arr[], int n) {
 }
 
 /**
- * Ñ¡ÔñÅÅĞò£º
- * 1.Æ½¾ùÊ±¼ä¸´ÔÓ¶ÈO(n^2) ×îºÃ O(n^2) ×î»µO(n^2)
- * 2.¿Õ¼ä¸´ÔÓ¶ÈO(1)
+ * é€‰æ‹©æ’åºï¼š
+ * 1.å¹³å‡æ—¶é—´å¤æ‚åº¦O(n^2) æœ€å¥½ O(n^2) æœ€åO(n^2)
+ * 2.ç©ºé—´å¤æ‚åº¦O(1)
  * 3.In-place
- * 4.²»ÎÈ¶¨
+ * 4.ä¸ç¨³å®š
  * @tparam T
  * @param arr
  * @param n
@@ -925,11 +937,11 @@ void select_sort(T arr[], int n) {
 }
 
 /**
- * ²åÈëÅÅĞò£º
- * 1.Æ½¾ùÊ±¼ä¸´ÔÓ¶ÈO(n^2) ×îºÃO(n) ×î»µO(n^2)
- * 2.¿Õ¼ä¸´ÔÓ¶ÈO(1)
+ * æ’å…¥æ’åºï¼š
+ * 1.å¹³å‡æ—¶é—´å¤æ‚åº¦O(n^2) æœ€å¥½O(n) æœ€åO(n^2)
+ * 2.ç©ºé—´å¤æ‚åº¦O(1)
  * 3.In-place
- * 4.ÎÈ¶¨
+ * 4.ç¨³å®š
  * @tparam T
  * @param arr
  * @param n
@@ -948,9 +960,9 @@ void insertion_sort(T arr[], int n) {
 }
 
 /**
- * Ï£¶ûÅÅĞò£º
- * 1.Ê±¼ä¸´ÔÓ¶ÈO(n^1.3-2)
- * 2.¿Õ¼ä¸´ÔÓ¶ÈO(1)
+ * å¸Œå°”æ’åºï¼š
+ * 1.æ—¶é—´å¤æ‚åº¦O(n^1.3-2)
+ * 2.ç©ºé—´å¤æ‚åº¦O(1)
  * 3.In-place
  * 4.buwend
  * @tparam T
@@ -972,7 +984,7 @@ void shell_sort(T arr[], int n) {
 }
 
 template<typename T>
-void merge(T arr[], int left, int mid, int right) {//²¢
+void merge(T arr[], int left, int mid, int right) {//å¹¶
     T b[right - left + 1];
     int i = left, j = mid + 1, k = i, t;
     while (i <= mid && j <= right) {
@@ -1003,18 +1015,18 @@ void merge(T arr[], int left, int mid, int right) {//²¢
 }
 
 /**
- * ¹é²¢ÅÅĞò£º
- * 1.Æ½¾ùÊ±¼ä¸´ÔÓ¶ÈO(nlog(n)) ×îºÃO(nlog(n)) ×î»µO(nlog(n))
- * 2.¿Õ¼ä¸´ÔÓ¶ÈO(n)
+ * å½’å¹¶æ’åºï¼š
+ * 1.å¹³å‡æ—¶é—´å¤æ‚åº¦O(nlog(n)) æœ€å¥½O(nlog(n)) æœ€åO(nlog(n))
+ * 2.ç©ºé—´å¤æ‚åº¦O(n)
  * 3.Out-place
- * 4.ÎÈ¶¨
+ * 4.ç¨³å®š
  * @tparam T
  * @param arr
  * @param from
  * @param to
  */
 template<typename T>
-void merge_sort(T arr[], int from, int to) {//¹é
+void merge_sort(T arr[], int from, int to) {//å½’
     if (from < to) {
         int mid = (from + to) / 2;
         merge_sort(arr, from, mid);
@@ -1024,11 +1036,11 @@ void merge_sort(T arr[], int from, int to) {//¹é
 }
 
 /**
- * ¿ìËÙÅÅĞò£º
- * 1.Æ½¾ùÊ±¼ä¸´ÔÓ¶ÈO(nlog(n)) ×îºÃO(nlog(n)) ×î»µO(n^2)
- * 2.¿Õ¼ä¸´ÔÓ¶ÈO(log(n))
+ * å¿«é€Ÿæ’åºï¼š
+ * 1.å¹³å‡æ—¶é—´å¤æ‚åº¦O(nlog(n)) æœ€å¥½O(nlog(n)) æœ€åO(n^2)
+ * 2.ç©ºé—´å¤æ‚åº¦O(log(n))
  * 3.In-place
- * 4.²»ÎÈ¶¨
+ * 4.ä¸ç¨³å®š
  * @tparam T
  * @param arr
  * @param str
@@ -1039,7 +1051,7 @@ void quick_sort(T arr[], int str, int fin) {
     int i = str, j = fin;
     T temp;
     if (i < j) {
-        temp = arr[i];//Ñ¡È¡µÚÒ»¸öÎªÖĞÖá
+        temp = arr[i];//é€‰å–ç¬¬ä¸€ä¸ªä¸ºä¸­è½´
         while (i < j) {
             while (i < j && arr[j] >= temp) j--;
             arr[i] = arr[j];
@@ -1053,16 +1065,16 @@ void quick_sort(T arr[], int str, int fin) {
 }
 
 template<typename T>
-void max_heapify(T arr[], int str, int fin) {//´ó¸ù¶Ñ
+void max_heapify(T arr[], int str, int fin) {//å¤§æ ¹å †
     int dad = str;
     int son = dad * 2 + 1;
-    while (son <= fin) {//×Ó½ÚµãÔÚ·¶Î§ÄÚ
-        if (son + 1 <= fin && arr[son + 1] > arr[son]) {//ÏÈ±È½ÏÁ½¸ö×Ó½Úµã´óĞ¡£¬Ñ¡Ôñ´óµÄ
+    while (son <= fin) {//å­èŠ‚ç‚¹åœ¨èŒƒå›´å†…
+        if (son + 1 <= fin && arr[son + 1] > arr[son]) {//å…ˆæ¯”è¾ƒä¸¤ä¸ªå­èŠ‚ç‚¹å¤§å°ï¼Œé€‰æ‹©å¤§çš„
             son++;
         }
-        if (arr[dad] > arr[son]) {//Èç¹û¸¸½Úµã´óÓÚ×Ó½Úµã´ú±íµ÷ÕûÍê±Ï
+        if (arr[dad] > arr[son]) {//å¦‚æœçˆ¶èŠ‚ç‚¹å¤§äºå­èŠ‚ç‚¹ä»£è¡¨è°ƒæ•´å®Œæ¯•
             return;
-        } else {//·ñÔò½»»»¸¸×ÓÄÚÈİÔÙ¼ÌĞø×Ó½ÚµãºÍ¸¸½Úµã±È½Ï
+        } else {//å¦åˆ™äº¤æ¢çˆ¶å­å†…å®¹å†ç»§ç»­å­èŠ‚ç‚¹å’Œçˆ¶èŠ‚ç‚¹æ¯”è¾ƒ
             Swap(arr[dad], arr[son]);
             dad = son;
             son = dad * 2 + 1;
@@ -1071,11 +1083,11 @@ void max_heapify(T arr[], int str, int fin) {//´ó¸ù¶Ñ
 }
 
 /**
- * ¶ÑÅÅĞò£º
- * 1.Æ½¾ùÊ±¼ä¸´ÔÓ¶ÈO(nlog(n)) ×îºÃO(nlog(n)) ×î»µO(nlog(n))
- * 2.¿Õ¼ä¸´ÔÓ¶ÈO(1)
+ * å †æ’åºï¼š
+ * 1.å¹³å‡æ—¶é—´å¤æ‚åº¦O(nlog(n)) æœ€å¥½O(nlog(n)) æœ€åO(nlog(n))
+ * 2.ç©ºé—´å¤æ‚åº¦O(1)
  * 3.In-place
- * 4.²»ÎÈ¶¨
+ * 4.ä¸ç¨³å®š
  * @tparam T
  * @param arr
  * @param len
@@ -1083,11 +1095,11 @@ void max_heapify(T arr[], int str, int fin) {//´ó¸ù¶Ñ
 template<typename T>
 void head_sort(T arr, int len) {
     int i;
-    //³õÊ¼»¯£¬i´Ó×îºóÒ»¸ö¸¸½Úµã¿ªÊ¼µ÷Õû
+    //åˆå§‹åŒ–ï¼Œiä»æœ€åä¸€ä¸ªçˆ¶èŠ‚ç‚¹å¼€å§‹è°ƒæ•´
     for (i = len / 2 - 1; i >= 0; i--) {
         max_heapify(arr, i, len - 1);
     }
-    //ÏÈ½«µÚÒ»¸öÔªËØºÍÒÑÅÅºÃÔªËØÇ°Ò»Î»½»»»£¬ÔÙÖØĞÂµ÷Õû£¬Ö±µ½ÅÅĞòÍê±Ï
+    //å…ˆå°†ç¬¬ä¸€ä¸ªå…ƒç´ å’Œå·²æ’å¥½å…ƒç´ å‰ä¸€ä½äº¤æ¢ï¼Œå†é‡æ–°è°ƒæ•´ï¼Œç›´åˆ°æ’åºå®Œæ¯•
     for (i = len - 1; i > 0; i--) {
         Swap(arr[0], arr[i]);
         max_heapify(arr, 0, i - 1);
@@ -1113,13 +1125,13 @@ T Min(T arr[], int n) {
 }
 
 /**
- * ¼ÆÊıÅÅĞò£º(Ö»ÄÜÓÃÓÚ·Ç¸ºÕûÊıµÄÅÅĞò)
- * 1.Æ½¾ùÊ±¼ä¸´ÔÓ¶ÈO(n+k) ×îºÃO(n+k) ×î»µO(n+k)
- * 2.¿Õ¼ä¸´ÔÓ¶ÈO(k)
+ * è®¡æ•°æ’åºï¼š(åªèƒ½ç”¨äºéè´Ÿæ•´æ•°çš„æ’åº)
+ * 1.å¹³å‡æ—¶é—´å¤æ‚åº¦O(n+k) æœ€å¥½O(n+k) æœ€åO(n+k)
+ * 2.ç©ºé—´å¤æ‚åº¦O(k)
  * 3.Out-place
- * 4.ÎÈ¶¨
- * @param arr ÒªÅÅĞòµÄÊı×é
- * @param re ÅÅĞòºÃµÄÊı×é
+ * 4.ç¨³å®š
+ * @param arr è¦æ’åºçš„æ•°ç»„
+ * @param re æ’åºå¥½çš„æ•°ç»„
  * @param n
  */
 void count_sort(int arr[], int re[], int n) {
@@ -1136,7 +1148,7 @@ void count_sort(int arr[], int re[], int n) {
     for (int i = 1; i < count_len; i++) {
         count[i] += count[i - 1];
     }
-//    for (int i = 0; i < n; i++) {//´ÓµÍÎ»»¹Ô­²»¾ßÓĞÎÈ¶¨ĞÔ
+//    for (int i = 0; i < n; i++) {//ä»ä½ä½è¿˜åŸä¸å…·æœ‰ç¨³å®šæ€§
 //        re[--count[arr[i] - min]] = arr[i];
 //    }
     for (int i = n - 1; i >= 0; i--) {
@@ -1156,24 +1168,24 @@ int maxbit(int arr[], int n) {
 }
 
 /**
- * »ùÊıÅÅĞò£º
- * 1.Æ½¾ùÊ±¼ä¸´ÔÓ¶ÈO(d(n+r)) ×îºÃO(d(n+r)) ×î»µO(d(n+r))
- * 2.¿Õ¼ä¸´ÔÓ¶È O(r)
+ * åŸºæ•°æ’åºï¼š
+ * 1.å¹³å‡æ—¶é—´å¤æ‚åº¦O(d(n+r)) æœ€å¥½O(d(n+r)) æœ€åO(d(n+r))
+ * 2.ç©ºé—´å¤æ‚åº¦ O(r)
  * 3.Out-place
- * 4.ÎÈ¶¨
+ * 4.ç¨³å®š
  * @param arr
  * @param n
  */
 void base_sort(int arr[], int n) {
     int d = maxbit(arr, n);
     int *temp = new int[n];
-    int *count = new int[10];//¼ÆÊıÆ÷
+    int *count = new int[10];//è®¡æ•°å™¨
     int i, j, k, radix = 1;
-    for (i = 1; i <= d; i++) {//½øĞĞd´ÎÅÅĞò
-        for (j = 0; j < 10; j++) {//Çå¿Õ¼ÆÊıÆ÷
+    for (i = 1; i <= d; i++) {//è¿›è¡Œdæ¬¡æ’åº
+        for (j = 0; j < 10; j++) {//æ¸…ç©ºè®¡æ•°å™¨
             count[j] = 0;
         }
-        for (j = 0; j < n; j++) {//Ã¿Î»½øĞĞÅÅĞòÊ±²ÉÓÃ¼ÆÊıÅÅĞò
+        for (j = 0; j < n; j++) {//æ¯ä½è¿›è¡Œæ’åºæ—¶é‡‡ç”¨è®¡æ•°æ’åº
             k = (arr[j] / radix) % 10;
             count[k]++;
         }
@@ -1184,7 +1196,7 @@ void base_sort(int arr[], int n) {
             k = (arr[j] / radix) % 10;
             temp[--count[k]] = arr[j];
         }
-        for (j = 0; j < n; j++) {//½«ÁÙÊ±Êı×éµÄÄÚÈİ¸´ÖÆ»ØarrÖĞ
+        for (j = 0; j < n; j++) {//å°†ä¸´æ—¶æ•°ç»„çš„å†…å®¹å¤åˆ¶å›arrä¸­
             arr[j] = temp[j];
         }
         radix *= 10;
@@ -1194,7 +1206,7 @@ void base_sort(int arr[], int n) {
 }
 
 /**
- * ÕÛ°ë²éÕÒ
+ * æŠ˜åŠæŸ¥æ‰¾
  * @tparam T
  * @param L
  * @param key
@@ -1212,7 +1224,7 @@ int Binary_Search(SqList<T> L, T key) {
             low = mid + 1;
         }
     }
-    return -1;//²éÕÒÊ§°Ü
+    return -1;//æŸ¥æ‰¾å¤±è´¥
 }
 
 #endif //UTILS_UTILS_H
